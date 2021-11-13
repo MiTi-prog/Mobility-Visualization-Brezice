@@ -1,4 +1,5 @@
-[
+{
+  "izposojevalnice-koles":[
     {
       "lokacija": "Trg vstaje, 8250 Brežice",
       "opis_lokacije": "Železniška postaja Brežice",
@@ -143,3 +144,4 @@
       "": ""
     }
   ]
+}

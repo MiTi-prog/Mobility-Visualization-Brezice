@@ -1,4 +1,5 @@
-[
+{
+  "defibrilatorji":[
     {
       "Opis": "Občina Brežice",
       "delovni čas": "dostopni 24 ur",
@@ -174,3 +175,4 @@
       "latitude": 45.9047542
     }
   ]
+}

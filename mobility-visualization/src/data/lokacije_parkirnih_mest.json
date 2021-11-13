@@ -1,4 +1,5 @@
-[
+{
+  "parkirna-mesta":[
     {
       "lokacija_parkirisca": "Cesta prvih borcev  18, 8250 Brežice - Cesta prvih borcev 48, 8250 Brežice",
       "opis_lokacije": "Cesta prvih borcev(v mestu od občine do sodišča)",
@@ -160,3 +161,4 @@
       "Parkrini režim": "Brez omejitev"
     }
   ]
+}
