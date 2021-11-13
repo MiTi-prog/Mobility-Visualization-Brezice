@@ -1,0 +1,145 @@
+[
+    {
+      "lokacija": "Trg vstaje, 8250 Brežice",
+      "opis_lokacije": "Železniška postaja Brežice",
+      "gps_kolesarnice": "45.923633, 15.589740",
+      "LAT": 45.923633,
+      "LON": 15.58974,
+      "Izposojevalnica\n(št. koles)": "X (10)",
+      "Kolesarnica": "X",
+      "Stojala za kolesa": "",
+      "": ""
+    },
+    {
+      "lokacija": "Ulica Stanka Škalerja 17, 8250 Brežice",
+      "opis_lokacije": "Avobusna postaja Brežice",
+      "gps_kolesarnice": "45.907196, 15.600479",
+      "LAT": 45.907196,
+      "LON": 15.600479,
+      "Izposojevalnica\n(št. koles)": "X (10)",
+      "Kolesarnica": "X",
+      "Stojala za kolesa": "",
+      "": ""
+    },
+    {
+      "lokacija": "Trg izgnancev, 8250 Brežice",
+      "opis_lokacije": "Gimnazija Brežice",
+      "gps_kolesarnice": "45.907974, 15.591359",
+      "LAT": 45.907974,
+      "LON": 15.591359,
+      "Izposojevalnica\n(št. koles)": "X (8)",
+      "Kolesarnica": "X",
+      "Stojala za kolesa": "",
+      "": ""
+    },
+    {
+      "lokacija": "Gubčeva ulica 10a, 8250 Brežice",
+      "opis_lokacije": "Mladinski center Brežice",
+      "gps_kolesarnice": "45.902224, 15.595113",
+      "LAT": 45.902224,
+      "LON": 15.595113,
+      "Izposojevalnica\n(št. koles)": "X (8)",
+      "Kolesarnica": "X",
+      "Stojala za kolesa": "",
+      "": ""
+    },
+    {
+      "lokacija": "Gubčeva ulica 1, 8250 Brežice",
+      "opis_lokacije": "Tržnica Brežice",
+      "gps_kolesarnice": "45.904311, 15.595612",
+      "LAT": 45.904311,
+      "LON": 15.595612,
+      "Izposojevalnica\n(št. koles)": "X (8)",
+      "Kolesarnica": "",
+      "Stojala za kolesa": "X",
+      "": ""
+    },
+    {
+      "lokacija": "Slomškova ulica 11, 8250 Brežice",
+      "opis_lokacije": "Trnje",
+      "gps_kolesarnice": "45.905104, 15.603145",
+      "LAT": 45.905104,
+      "LON": 15.603145,
+      "Izposojevalnica\n(št. koles)": "X (8)",
+      "Kolesarnica": "",
+      "Stojala za kolesa": "",
+      "": ""
+    },
+    {
+      "lokacija": "Levstikova ulica 18, 8250 Brežice",
+      "opis_lokacije": "OŠ in športna dvorana Brežice",
+      "gps_kolesarnice": "45.907420, 15.595424",
+      "LAT": 45.90742,
+      "LON": 15.595424,
+      "Izposojevalnica\n(št. koles)": "",
+      "Kolesarnica": "X",
+      "Stojala za kolesa": "",
+      "": ""
+    },
+    {
+      "lokacija": "Bizeljska cesta 45, 8250 Brežice",
+      "opis_lokacije": "Ekonomska šola Brežice",
+      "gps_kolesarnice": "45.906870, 15.604319",
+      "LAT": 45.90687,
+      "LON": 15.604319,
+      "Izposojevalnica\n(št. koles)": "",
+      "Kolesarnica": "X",
+      "Stojala za kolesa": "",
+      "": ""
+    },
+    {
+      "lokacija": "Šolska ulica 5, 8250 Brežice",
+      "opis_lokacije": "Vrtec Brežice",
+      "gps_kolesarnice": "45.906110, 15.597047",
+      "LAT": 45.90611,
+      "LON": 15.597047,
+      "Izposojevalnica\n(št. koles)": "",
+      "Kolesarnica": "",
+      "Stojala za kolesa": "X",
+      "": ""
+    },
+    {
+      "lokacija": "Cesta prvih borcev 1, 8250 Brežice",
+      "opis_lokacije": "Občina Brežice",
+      "gps_kolesarnice": "45.902434, 15.592612",
+      "LAT": 45.902434,
+      "LON": 15.592612,
+      "Izposojevalnica\n(št. koles)": "",
+      "Kolesarnica": "",
+      "Stojala za kolesa": "X",
+      "": ""
+    },
+    {
+      "lokacija": "Trg Jožeta Toporišiča 1, 8250 Brežice",
+      "opis_lokacije": "Knjižnica Brežice",
+      "gps_kolesarnice": "45.909027, 15.592288",
+      "LAT": 45.909027,
+      "LON": 15.592288,
+      "Izposojevalnica\n(št. koles)": "",
+      "Kolesarnica": "",
+      "Stojala za kolesa": "X",
+      "": ""
+    },
+    {
+      "lokacija": "Dobovska cesta, 8250 Brežice",
+      "opis_lokacije": "Pokopališče Brežice",
+      "gps_kolesarnice": "45.900445, 15.597664",
+      "LAT": 45.900445,
+      "LON": 15.597664,
+      "Izposojevalnica\n(št. koles)": "",
+      "Kolesarnica": "",
+      "Stojala za kolesa": "X",
+      "": ""
+    },
+    {
+      "lokacija": "",
+      "opis_lokacije": "",
+      "gps_kolesarnice": "",
+      "LAT": "",
+      "LON": "",
+      "Izposojevalnica\n(št. koles)": "",
+      "Kolesarnica": "",
+      "Stojala za kolesa": "",
+      "": ""
+    }
+  ]
