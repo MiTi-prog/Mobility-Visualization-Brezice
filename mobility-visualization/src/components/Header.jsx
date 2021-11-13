@@ -13,11 +13,11 @@ function Header() {
     return (
         <nav className="flex items-center justify-between flex-wrap bg-gray-800 p-6 fixed w-full z-10 top-0">
 		<div className="flex items-center flex-shrink-0 text-white mr-6">
-			<a className="text-white no-underline hover:text-white hover:no-underline" href="#">
+			<span className="text-white no-underline hover:text-white hover:no-underline" href="#">
 				<Link to="/">
                     <span className="text-2xl pl-2"><i className="em em-grinning"></i> Brežice </span>
                 </Link>
-			</a>
+			</span>
 		</div>
 
 		<div className="block lg:hidden">
@@ -40,14 +40,14 @@ function Header() {
                         <span className="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4">Električne polnilnice</span>
                     </Link>
 				</li>
-				<li class="mr-3">
+				<li className="mr-3">
                     <Link to="/izposojevalnice-koles"> 
-                        <span class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4">Izposojevalnice koles</span>
+                        <span className="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4">Izposojevalnice koles</span>
                     </Link>
 				</li>
-				<li class="mr-3">
+				<li className="mr-3">
                     <Link to="/defibrilatorji"> 
-                        <span class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4">Defibrilatorji</span>
+                        <span className="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4">Defibrilatorji</span>
                     </Link>
 				</li>
 			</ul>
