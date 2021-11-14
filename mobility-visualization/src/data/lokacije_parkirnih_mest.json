@@ -6,9 +6,9 @@
       "gps_parkirisca": "45.903834,  15.592205",
       "LAT": 45.903834,
       "LON": 15.592205,
-      "parkirni prostori": 91,
-      "parkirni prostori za invalide": 4,
-      "Parkrini režim": "Parkirnina 7:00 - 15:00 PON -PET"
+      "parkirni_prostori": 91,
+      "parkirni_prostori_za_invalide": 4,
+      "parkrini_rezim": "Parkirnina 7:00 - 15:00 PON -PET"
     },
     {
       "lokacija_parkirisca": "Cesta prvih borcev 18, 8250 Brežice - Cesta prvih borcev 16, 8250 Brežice",
