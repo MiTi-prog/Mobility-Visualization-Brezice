@@ -1,178 +1,176 @@
-{
-  "defibrilatorji": [
+[
     {
-      "Opis": "Občina Brežice",
-      "delovni čas": "dostopni 24 ur",
+      "opis": "Občina Brežice",
+      "delovni_cas": "dostopni 24 ur",
       "longitude": 15.5926788,
       "latitude": 45.903844
     },
     {
-      "Opis": "Zdravstveni dom Brežice",
-      "delovni čas": "dostopni 24 ur",
+      "opis": "Zdravstveni dom Brežice",
+      "delovni_cas": "dostopni 24 ur",
       "longitude": 15.5941272,
       "latitude": 45.9079725
     },
     {
-      "Opis": "Lekarna Bizeljsko",
-      "delovni čas": "dostopni 24 ur",
+      "opis": "Lekarna Bizeljsko",
+      "delovni_cas": "dostopni 24 ur",
       "longitude": 15.692634,
       "latitude": 46.0131496
     },
     {
-      "Opis": "Mednarodni mejni prehod Obrežje",
-      "delovni čas": "dostopni 24 ur",
+      "opis": "Mednarodni mejni prehod Obrežje",
+      "delovni_cas": "dostopni 24 ur",
       "longitude": 15.6934762,
       "latitude": 45.8461033
     },
     {
-      "Opis": "Vojašnica Cerklje ob Krki",
-      "delovni čas": "dostopni 24 ur",
+      "opis": "Vojašnica Cerklje ob Krki",
+      "delovni_cas": "dostopni 24 ur",
       "longitude": 15.5214125,
       "latitude": 45.886207
     },
     {
-      "Opis": "Osnovna šola Cerklje ob Krki",
-      "delovni čas": "dostopni 24 ur",
+      "opis": "Osnovna šola Cerklje ob Krki",
+      "delovni_cas": "dostopni 24 ur",
       "longitude": 15.5227844,
       "latitude": 45.8846237
     },
     {
-      "Opis": "Osnovna šola Velika Dolina",
-      "delovni čas": "dostopni 24 ur",
+      "opis": "Osnovna šola Velika Dolina",
+      "delovni_cas": "dostopni 24 ur",
       "longitude": 15.6639504,
       "latitude": 45.8529337
     },
     {
-      "Opis": "Osnovna šola Maksa Pleteršnika Pišece",
-      "delovni čas": "dostopni 24 ur",
+      "opis": "Osnovna šola Maksa Pleteršnika Pišece",
+      "delovni_cas": "dostopni 24 ur",
       "longitude": 15.6473073,
       "latitude": 46.0032146
     },
     {
-      "Opis": "Gasilski dom Pirošica",
-      "delovni čas": "dostopni 24 ur",
+      "opis": "Gasilski dom Pirošica",
+      "delovni_cas": "dostopni 24 ur",
       "longitude": 15.524202,
       "latitude": 45.8768224
     },
     {
-      "Opis": "M.S.H. d.o.o.",
-      "delovni čas": "dostopni 24 ur",
+      "opis": "M.S.H. d.o.o.",
+      "delovni_cas": "dostopni 24 ur",
       "longitude": 15.6788823,
       "latitude": 45.8931184
     },
     {
-      "Opis": "Trgovina Hofer",
-      "delovni čas": "dostopni 24 ur",
+      "opis": "Trgovina Hofer",
+      "delovni_cas": "dostopni 24 ur",
       "longitude": 15.5975229,
       "latitude": 45.9107719
     },
     {
-      "Opis": "Kodrič Boško",
-      "delovni čas": "dostopni 24 ur",
+      "opis": "Kodrič Boško",
+      "delovni_cas": "dostopni 24 ur",
       "longitude": 15.5103806,
       "latitude": 45.8920655
     },
     {
-      "Opis": "KS Krška vas",
-      "delovni čas": "dostopni 24 ur",
+      "opis": "KS Krška vas",
+      "delovni_cas": "dostopni 24 ur",
       "longitude": 15.5708402,
       "latitude": 45.8912889
     },
     {
-      "Opis": "Osnovna šola Globoko",
-      "delovni čas": "dostopni 24 ur",
+      "opis": "Osnovna šola Globoko",
+      "delovni_cas": "dostopni 24 ur",
       "longitude": 15.628202,
       "latitude": 45.9561436
     },
     {
-      "Opis": "Nekdanja Osnovna šola Kapele",
-      "delovni čas": "dostopni 24 ur",
+      "opis": "Nekdanja Osnovna šola Kapele",
+      "delovni_cas": "dostopni 24 ur",
       "longitude": 15.677076,
       "latitude": 45.9300946
     },
     {
-      "Opis": "Gasilski dom Obrežje",
-      "delovni čas": "dostopni 24 ur",
+      "opis": "Gasilski dom Obrežje",
+      "delovni_cas": "dostopni 24 ur",
       "longitude": 15.6877803,
       "latitude": 45.8505406
     },
     {
-      "Opis": "Nekdanja osnovna šola Mrzlava vas oziroma Dom krajanov Mrzlava vas",
-      "delovni čas": "dostopni 24 ur",
+      "opis": "Nekdanja osnovna šola Mrzlava vas oziroma Dom krajanov Mrzlava vas",
+      "delovni_cas": "dostopni 24 ur",
       "longitude": 15.5815039,
       "latitude": 45.877642
     },
     {
-      "Opis": "Prosvetni dom Artiče",
-      "delovni čas": "dostopni 24 ur",
+      "opis": "Prosvetni dom Artiče",
+      "delovni_cas": "dostopni 24 ur",
       "longitude": 15.5839493,
       "latitude": 45.9526049
     },
     {
-      "Opis": "Gasilski dom PGD Župelevec",
-      "delovni čas": "dostopni 24 ur",
+      "opis": "Gasilski dom PGD Župelevec",
+      "delovni_cas": "dostopni 24 ur",
       "longitude": 15.685158,
       "latitude": 45.9598479
     },
     {
-      "Opis": "Terme Čatež",
-      "delovni čas": "omejeno dostopni",
+      "opis": "Terme Čatež",
+      "delovni_cas": "omejeno dostopni",
       "longitude": 15.6247473,
       "latitude": 45.8916062
     },
     {
-      "Opis": "Gimnazija Brežice",
-      "delovni čas": "omejeno dostopni",
+      "opis": "Gimnazija Brežice",
+      "delovni_cas": "omejeno dostopni",
       "longitude": 15.5916864,
       "latitude": 45.9076123
     },
     {
-      "Opis": "Intermarket Brežice",
-      "delovni čas": "omejeno dostopni",
+      "opis": "Intermarket Brežice",
+      "delovni_cas": "omejeno dostopni",
       "longitude": 15.5957472,
       "latitude": 45.9176727
     },
     {
-      "Opis": "Upravna enota Brežice",
-      "delovni čas": "omejeno dostopni",
+      "opis": "Upravna enota Brežice",
+      "delovni_cas": "omejeno dostopni",
       "longitude": 15.5927257,
       "latitude": 45.9043629
     },
     {
-      "Opis": "Splošna bolnišnica Brežice",
-      "delovni čas": "omejeno dostopni",
+      "opis": "Splošna bolnišnica Brežice",
+      "delovni_cas": "omejeno dostopni",
       "longitude": 15.5946422,
       "latitude": 45.9088646
     },
     {
-      "Opis": "Ekonomska in trgovska šola Brežice",
-      "delovni čas": "omejeno dostopni",
+      "opis": "Ekonomska in trgovska šola Brežice",
+      "delovni_cas": "omejeno dostopni",
       "longitude": 15.6047246,
       "latitude": 45.9075675
     },
     {
-      "Opis": "Zavarovalnica Triglav d.d.",
-      "delovni čas": "omejeno dostopni",
+      "opis": "Zavarovalnica Triglav d.d.",
+      "delovni_cas": "omejeno dostopni",
       "longitude": 15.5915791,
       "latitude": 45.9125765
     },
     {
-      "Opis": "TA Regulator d.o.o.",
-      "delovni čas": "omejeno dostopni",
+      "opis": "TA Regulator d.o.o.",
+      "delovni_cas": "omejeno dostopni",
       "longitude": 15.5927029,
       "latitude": 45.915887
     },
     {
-      "Opis": "SŽ-Vleka in tehnika d.o.o.",
-      "delovni čas": "omejeno dostopni",
+      "opis": "SŽ-Vleka in tehnika d.o.o.",
+      "delovni_cas": "omejeno dostopni",
       "longitude": 15.648002,
       "latitude": 45.9016976
     },
     {
-      "Opis": "Lekarna Trnje",
-      "delovni čas": "omejeno dostopni",
+      "opis": "Lekarna Trnje",
+      "delovni_cas": "omejeno dostopni",
       "longitude": 15.6013476,
       "latitude": 45.9047542
     }
-  ]
-}
+]

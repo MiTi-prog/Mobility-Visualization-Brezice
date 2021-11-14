@@ -1,5 +1,4 @@
-{
-  "polnilnice": [
+[
     {
       "opis": "Apartmajska hiša Sumrak",
       "longitude": 15.6770626,
@@ -151,5 +150,4 @@
       "nazivnaMoc" : "11kw",
       "naslov" : "Černelčeva cesta 10, 8250 Brežice"
     }
-  ]
-}
+]

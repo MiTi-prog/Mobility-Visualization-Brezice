@@ -1,5 +1,5 @@
-{
-  "parkirna-mesta": [
+
+[
     {
       "lokacija_parkirisca": "Cesta prvih borcev  18, 8250 Brežice - Cesta prvih borcev 48, 8250 Brežice",
       "opis_lokacije": "Cesta prvih borcev(v mestu od občine do sodišča)",
@@ -16,9 +16,9 @@
       "gps_parkirisca": "45.903840, 15.592305",
       "LAT": 45.90384,
       "LON": 15.592305,
-      "parkirni prostori": 19,
-      "parkirni prostori za invalide": 2,
-      "Parkrini režim": "Parkirnina 7:00 - 15:00 PON -PET"
+      "parkirni_prostori": 19,
+      "parkirni_prostori_za_invalide": 2,
+      "parkrini_rezim": "Parkirnina 7:00 - 15:00 PON -PET"
     },
     {
       "lokacija_parkirisca": "Cesta prvih borcev 18, 8250 Brežice - Cesta prvih borcev 1, 8250 Brežice",
@@ -26,9 +26,9 @@
       "gps_parkirisca": "45.902433, 15.592642",
       "LAT": 45.902433,
       "LON": 15.592642,
-      "parkirni prostori": 56,
-      "parkirni prostori za invalide": 1,
-      "Parkrini režim": "Parkirnina 7:00 - 15:00 PON -PET"
+      "parkirni_prostori": 56,
+      "parkirni_prostori_za_invalide": 1,
+      "parkrini_rezim": "Parkirnina 7:00 - 15:00 PON -PET"
     },
     {
       "lokacija_parkirisca": "Bizeljska cesta 1, 8250 Brežice",
@@ -36,9 +36,9 @@
       "gps_parkirisca": "45.904028, 15.593084",
       "LAT": 45.904028,
       "LON": 15.593084,
-      "parkirni prostori": 9,
-      "parkirni prostori za invalide": 0,
-      "Parkrini režim": "Brez omejitev"
+      "parkirni_prostori": 9,
+      "parkirni_prostori_za_invalide": 0,
+      "parkrini_rezim": "Brez omejitev"
     },
     {
       "lokacija_parkirisca": "Bizeljska cesta 3, 8250 Brežice - Bizeljska cesta 5, 8250 Brežice",
@@ -46,9 +46,9 @@
       "gps_parkirisca": "45.904093, 15.594169",
       "LAT": 45.904093,
       "LON": 15.594169,
-      "parkirni prostori": 23,
-      "parkirni prostori za invalide": 0,
-      "Parkrini režim": "Brez omejitev"
+      "parkirni_prostori": 23,
+      "parkirni_prostori_za_invalide": 0,
+      "parkrini_rezim": "Brez omejitev"
     },
     {
       "lokacija_parkirisca": "Bizeljska cesta 5,8250 Brežice - Bizeljska cesta 23, 8250 Brežice",
@@ -56,9 +56,9 @@
       "gps_parkirisca": "45.904859, 15.597405",
       "LAT": 45.904859,
       "LON": 15.597405,
-      "parkirni prostori": 28,
-      "parkirni prostori za invalide": 2,
-      "Parkrini režim": "Brez omejitev"
+      "parkirni_prostori": 28,
+      "parkirni_prostori_za_invalide": 2,
+      "parkrini_rezim": "Brez omejitev"
     },
     {
       "lokacija_parkirisca": "Bizeljska cesta 23, 8250 Brežice - Bizeljska cesta 33, 8250 Brežice",
@@ -66,9 +66,9 @@
       "gps_parkirisca": "45.904995, 15.598984",
       "LAT": 45.904995,
       "LON": 15.598984,
-      "parkirni prostori": 28,
-      "parkirni prostori za invalide": 0,
-      "Parkrini režim": "Brez omejitev"
+      "parkirni_prostori": 28,
+      "parkirni_prostori_za_invalide": 0,
+      "parkrini_rezim": "Brez omejitev"
     },
     {
       "lokacija_parkirisca": "Bizeljska cesta 5, 8250 Brežice",
@@ -76,9 +76,9 @@
       "gps_parkirisca": "45.904501, 15.595487",
       "LAT": 45.904501,
       "LON": 15.595487,
-      "parkirni prostori": 11,
-      "parkirni prostori za invalide": 2,
-      "Parkrini režim": "Brez omejitev"
+      "parkirni_prostori": 11,
+      "parkirni_prostori_za_invalide": 2,
+      "parkrini_rezim": "Brez omejitev"
     },
     {
       "lokacija_parkirisca": "Pod obzidjem 21, 8250 Brežice",
@@ -86,9 +86,9 @@
       "gps_parkirisca": "45.904211, 15.594107",
       "LAT": 45.904211,
       "LON": 15.594107,
-      "parkirni prostori": 66,
-      "parkirni prostori za invalide": 6,
-      "Parkrini režim": "Brez omejitev"
+      "parkirni_prostori": 66,
+      "parkirni_prostori_za_invalide": 6,
+      "parkrini_rezim": "Brez omejitev"
     },
     {
       "lokacija_parkirisca": "Ulica stare pravde 34, 8250 Brežice - Cesta prvih borcev 1, 8250 Brežice",
@@ -96,9 +96,9 @@
       "gps_parkirisca": "45.904803, 15.593128",
       "LAT": 45.904803,
       "LON": 15.593128,
-      "parkirni prostori": 6,
-      "parkirni prostori za invalide": 1,
-      "Parkrini režim": "Brez omejitev"
+      "parkirni_prostori": 6,
+      "parkirni_prostori_za_invalide": 1,
+      "parkrini_rezim": "Brez omejitev"
     },
     {
       "lokacija_parkirisca": "Trg Jožeta Toporišiča 1, 8250 Brežice",
@@ -106,9 +106,9 @@
       "gps_parkirisca": "45.908809, 15.592456",
       "LAT": 45.908809,
       "LON": 15.592456,
-      "parkirni prostori": 23,
-      "parkirni prostori za invalide": 3,
-      "Parkrini režim": "Brez omejitev"
+      "parkirni_prostori": 23,
+      "parkirni_prostori_za_invalide": 3,
+      "parkrini_rezim": "Brez omejitev"
     },
     {
       "lokacija_parkirisca": "Trg Jožeta Toporišiča , 8250 Brežice",
@@ -116,9 +116,9 @@
       "gps_parkirisca": "45.907967, 15.591298",
       "LAT": 45.907967,
       "LON": 15.591298,
-      "parkirni prostori": 41,
-      "parkirni prostori za invalide": 0,
-      "Parkrini režim": "Brez omejitev"
+      "parkirni_prostori": 41,
+      "parkirni_prostori_za_invalide": 0,
+      "parkrini_rezim": "Brez omejitev"
     },
     {
       "lokacija_parkirisca": "Levstikova ulica 2, 8250 Brežice",
@@ -126,9 +126,9 @@
       "gps_parkirisca": "45.906618, 15.592229",
       "LAT": 45.906618,
       "LON": 15.922229,
-      "parkirni prostori": 20,
-      "parkirni prostori za invalide": 0,
-      "Parkrini režim": "Brez omejitev"
+      "parkirni_prostori": 20,
+      "parkirni_prostori_za_invalide": 0,
+      "parkrini_rezim": "Brez omejitev"
     },
     {
       "lokacija_parkirisca": "Černelčeva cesta 8, 8250 Brežice",
@@ -136,9 +136,9 @@
       "gps_parkirisca": "45.907936, 15.593638",
       "LAT": 45.907936,
       "LON": 15.593638,
-      "parkirni prostori": 82,
-      "parkirni prostori za invalide": 6,
-      "Parkrini režim": "Brez omejitev"
+      "parkirni_prostori": 82,
+      "parkirni_prostori_za_invalide": 6,
+      "parkrini_rezim": "Brez omejitev"
     },
     {
       "lokacija_parkirisca": "Černelčeva cesta 15, 8250 Brežice",
@@ -146,9 +146,9 @@
       "gps_parkirisca": "45.908152, 15.594578",
       "LAT": 45.908152,
       "LON": 15.594578,
-      "parkirni prostori": 70,
-      "parkirni prostori za invalide": 2,
-      "Parkrini režim": "Brez omejitev"
+      "parkirni_prostori": 70,
+      "parkirni_prostori_za_invalide": 2,
+      "parkrini_rezim": "Brez omejitev"
     },
     {
       "lokacija_parkirisca": "Černelčeva cesta 3a, 8250 Brežice",
@@ -156,9 +156,8 @@
       "gps_parkirisca": "45.907102, 15.592630",
       "LAT": 45.907102,
       "LON": 15.59263,
-      "parkirni prostori": 4,
-      "parkirni prostori za invalide": 0,
-      "Parkrini režim": "Brez omejitev"
+      "parkirni_prostori": 4,
+      "parkirni_prostori_za_invalide": 0,
+      "parkrini_rezim": "Brez omejitev"
     }
-  ]
-}
+]
