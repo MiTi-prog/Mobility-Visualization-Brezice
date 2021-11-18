@@ -1,9 +1,11 @@
 import React from 'react'
 import polnilnice from '../data/elektricne_polnilnice.json';
+import Header from './Header';
 
 function ElektricnePolnilnice() {
     return (
         <div className="">
+            <Header />
             <header className="bg-white shadow">
                 <div className="max-w-full mx-auto py-6">
                     <h1 className="text-3xl font-bold text-gray-900 px-4 sm:px-6 lg:px-8">Električne polnilnice</h1>

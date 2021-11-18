@@ -5,6 +5,8 @@ import ElektricnePolnilnice from './components/ElektricnePolnilnice.jsx';
 import IzposojevalniceKoles from './components/IzposojevalniceKoles.jsx';
 import Defibrilatorji from './components/Defibrilatorji.jsx';
 import ParkirnaMesta from './components/ParkirnaMesta.jsx';
+import './app.css';
+
 
 import {
   BrowserRouter as Router,
@@ -17,7 +19,6 @@ function App() {
   return (
     <div className="App">
         <Router>
-          <Header />
           <Switch>
             <Route exact path="/">
               <Home />

@@ -1,0 +1,4 @@
+/* removing mapbox information on bottom */
+.mapboxgl-control-container {
+    display: none;
+}
