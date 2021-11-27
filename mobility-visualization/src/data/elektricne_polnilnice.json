@@ -10,7 +10,7 @@
       "naslov" : "Vitna vas 22, 8259 Bizeljsko"
     },
     {
-      "Opis": "Turistična kmetija Martinovi",
+      "opis": "Turistična kmetija Martinovi",
       "longitude": 15.573894,
       "latitude": 45.8639567,
       "cena": "free",
@@ -20,7 +20,7 @@
       "naslov" : "Globočice 8, 8262 Krška vas, Slovenia"
     },
     {
-      "Opis": "Bubka Bar",
+      "opis": "Bubka Bar",
       "longitude": 15.6139733,
       "latitude": 45.9532299,
       "cena": "free",
@@ -30,7 +30,7 @@
       "naslov" : "Mali vrh 9, Dečno selo, Slovenia"
     },
     {
-      "Opis": "Gostinstvo Strniša d.o.o.",
+      "opis": "Gostinstvo Strniša d.o.o.",
       "longitude": 15.6895054,
       "latitude": 45.8586898,
       "cena": "free",
@@ -41,7 +41,7 @@
       
     },
     {
-      "Opis": "Gostilna Pension Les",
+      "opis": "Gostilna Pension Les",
       "longitude": 15.6024743,
       "latitude": 45.89092,
       "cena": "free",
@@ -51,7 +51,7 @@
       "naslov" : "Rimska cesta 31, 8250 Brežice, Slovenija"
     },
     {
-      "Opis": "Istenič d.o.o.",
+      "opis": "Istenič d.o.o.",
       "longitude": 15.6937012,
       "latitude": 45.9700257,
       "cena": "free",
@@ -61,7 +61,7 @@
       "naslov" : "Stara Vas-Bizeljsko 6b, 8259 Bizeljsko, Slovenija"
     },
     {
-      "Opis": "Stara gostilna Krulc",
+      "opis": "Stara gostilna Krulc",
       "longitude": 15.628394,
       "latitude": 45.8983978,
       "cena": "free",
@@ -71,7 +71,7 @@
       "naslov" : "Mostec 47, 8257 Dobova, Slovenija"
     },
     {
-      "Opis": "Terme Paradiso",
+      "opis": "Terme Paradiso",
       "longitude": 15.6546308,
       "latitude": 45.8978868,
       "cena": "free",
@@ -81,7 +81,7 @@
       "naslov" : "Selska cesta 15b, 8257 Dobova, Slovenia"
     },
     {
-      "Opis": "AFP d.o.o.",
+      "opis": "AFP d.o.o.",
       "longitude": 15.6440583,
       "latitude": 45.9022508,
       "cena": "free",
@@ -91,7 +91,7 @@
       "naslov" : "Sela pri Dobovi 2, 8257 Dobova, Slovenija"
     },
     {
-      "Opis": "Intermarket Brežice",
+      "opis": "Intermarket Brežice",
       "longitude": 15.5966315,
       "latitude": 45.918241,
       "cena": "free",
@@ -101,7 +101,7 @@
       "naslov" : "Tovarniška cesta 10, 8250 Brežice, Slovenija"
     },
     {
-      "Opis": "KS Sromlje",
+      "opis": "KS Sromlje",
       "longitude": 15.591096,
       "latitude": 45.9882573,
       "cena": "free",
@@ -111,7 +111,7 @@
       "naslov" : "Sromlje 5, 8256 Sromlje"
     },
     {
-      "Opis": "KS Kapele",
+      "opis": "KS Kapele",
       "longitude": 15.6769994,
       "latitude": 45.9300975,
       "cena": "free",
@@ -121,7 +121,7 @@
       "naslov" : "Kapele 15, 8258 Kapele, Slovenija"
     },
     {
-      "Opis": "Občina Brežice",
+      "opis": "Občina Brežice",
       "longitude": 15.5925995,
       "latitude": 45.9039631,
       "cena": "free",
@@ -131,7 +131,7 @@
       "naslov" : "Bizeljska cesta 1a, 8250 Brežice, Slovenija"
     },
     {
-      "Opis": "ZPTM Brežice",
+      "opis": "ZPTM Brežice",
       "longitude": 15.5949894,
       "latitude": 45.902162,
       "cena": "free",
@@ -141,7 +141,7 @@
       "naslov" : "Ulica Ilije Gregoriča 12, 8250 Brežice, Slovenija"
     },
     {
-      "Opis": "Zavod za šport",
+      "opis": "Zavod za šport",
       "longitude": 15.5958176,
       "latitude": 45.9079647,
       "cena": "free",

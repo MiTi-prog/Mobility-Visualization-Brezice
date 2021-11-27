@@ -10,7 +10,7 @@ function Header() {
     return (
 		<div>
 		<nav className="bg-blue-800 shadow-lg bg-opacity-90">
-			<div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
+			<div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 py-5">
 			<div className="flex items-center justify-between h-16">
 				<div className="flex items-center">
 					<div className="flex-shrink-0">
@@ -20,9 +20,10 @@ function Header() {
 						src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
 						alt="Workflow"
 						/>*/}
-						<Link to="/">
-							<span className="text-2xl pl-2 text-white"><i className="em em-grinning"></i> Brežice </span>
-						</Link>
+						{/*<span className="text-2xl pl-2 text-white"><i className="em em-grinning"></i> Brežice </span>*/}
+						<div className="app-logo w-32">
+							<img src="logotip-brezice.svg" alt="Logotip občine Brežice" />
+						</div>
 					</div>
 					<div className="hidden md:block">
 						<div className="ml-10 flex items-baseline space-x-4">

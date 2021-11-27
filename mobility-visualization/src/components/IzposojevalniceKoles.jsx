@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import kolesa from '../data/izposojevalnice_koles.json';
 import Header from './Header';
-import ReactMapGL, { Marker, Popup } from 'react-map-gl';
+import ReactMapGL, { Marker, Popup, NavigationControl } from 'react-map-gl';
  
 ReactMapGL.accessToken = 'pk.eyJ1IjoibWl0aTIxIiwiYSI6ImNrdzNoamxwdTFka2syb3JvdWRhM3EwNW8ifQ.OV5IlhtvWXgW2SwJbi_xYw';
 
@@ -14,7 +14,12 @@ function IzposojevalniceKoles() {
         latitude: lat,
         center: [long, lat],
         zoom: 13
-      });
+    });
+
+    const navControlStyle= {
+      right: 50,
+      top: 50
+    };
 
     const [selectedBike, setSelectedBike] = useState(null);
     
@@ -28,14 +33,12 @@ function IzposojevalniceKoles() {
     
       return(
         <div className="">
-
-        
         <Header />
         <div className="w-full h-full">
             <ReactMapGL 
                 {...viewport}
                 width="100vw" 
-                height="94vh" 
+                height="90vh" 
                 mapStyle="mapbox://styles/mapbox/light-v10"
                 onViewportChange={setViewport}
                 mapboxApiAccessToken={'pk.eyJ1IjoibWl0aTIxIiwiYSI6ImNrdzNoamxwdTFka2syb3JvdWRhM3EwNW8ifQ.OV5IlhtvWXgW2SwJbi_xYw'}
@@ -46,7 +49,8 @@ function IzposojevalniceKoles() {
                     <Marker 
                       key={kolo.opis_lokacije} 
                       longitude={kolo.LON} 
-                      latitude={kolo.LAT} >
+                      latitude={kolo.LAT} 
+                    >
 
                         <button className="marker-btn" onClick={(e) => {
                           e.preventDefault();
@@ -65,15 +69,16 @@ function IzposojevalniceKoles() {
                     longitude={selectedBike.LON}
                     onClose={() => {
                       setSelectedBike(null);
-                    }}  
+                    }}
+                    closeOnClick={false}  
                   >
                     <div>
-                      <h2>{selectedBike.lokacija}</h2>
+                      <h2><strong>{selectedBike.lokacija}</strong></h2>
                       <p>{selectedBike.opis_lokacije}</p>
                     </div>
                   </Popup>
                 ) : null}
-
+              <NavigationControl style={navControlStyle} />
             </ReactMapGL>
         </div>
         </div>

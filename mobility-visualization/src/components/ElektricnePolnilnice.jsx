@@ -1,32 +1,86 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import polnilnice from '../data/elektricne_polnilnice.json';
 import Header from './Header';
+import ReactMapGL, { Marker, Popup, NavigationControl } from 'react-map-gl';
+ 
+ReactMapGL.accessToken = 'pk.eyJ1IjoibWl0aTIxIiwiYSI6ImNrdzNoamxwdTFka2syb3JvdWRhM3EwNW8ifQ.OV5IlhtvWXgW2SwJbi_xYw';
 
 function ElektricnePolnilnice() {
-    return (
+    const [long, SetLong] = useState(15.5965);
+    const [lat, SetLat] = useState(45.9088);
+    
+    const [viewport, setViewport] = React.useState({
+        longitude: long,
+        latitude: lat,
+        center: [long, lat],
+        zoom: 11
+    });
+    
+    const navControlStyle= {
+        right: 50,
+        top: 50
+      };
+
+    const [selectedCharger, setselectedCharger] = useState(null);
+    
+    //[] - na koncu effecta tuki pove, da se ta akcija izvede samo 1x (enako kot componentDidMount())!
+    useEffect(() => {
+      const listener = e => {
+        if (e.key === "Escape") { setselectedCharger(null); }
+      };
+      window.addEventListener("keydown", listener)
+    }, []);
+    
+      return(
         <div className="">
-            <Header />
-            <header className="bg-white shadow">
-                <div className="max-w-full mx-auto py-6">
-                    <h1 className="text-3xl font-bold text-gray-900 px-4 sm:px-6 lg:px-8">Električne polnilnice</h1>
-                </div>
-            </header>
-            <div className="px-4 sm:px-6 lg:px-8 mt-8">
-                {
-                    polnilnice.map (data => 
-                        <div>
-                            <span><b> Opis lokacije: </b>{data.opis}</span>
-                            <span><b> Cena: </b>{data.cena}</span>
-                            <span><b> Število vtičnic: </b>{data.vticnnicaSt}</span>
-                            <span><b> Vrsta vtičnice: </b>{data.vrstaVticnice}</span>    
-                            <span><b> Nazivna moč: </b>{data.nazivnaMoc}</span>    
-                            <span><b> Naslov: </b>{data.naslov}</span>    
-                        </div>
-                    )
+        <Header />
+        <div className="w-full h-full">
+            <ReactMapGL 
+                {...viewport}
+                width="100vw" 
+                height="90vh" 
+                mapStyle="mapbox://styles/mapbox/light-v10"
+                onViewportChange={setViewport}
+                mapboxApiAccessToken={'pk.eyJ1IjoibWl0aTIxIiwiYSI6ImNrdzNoamxwdTFka2syb3JvdWRhM3EwNW8ifQ.OV5IlhtvWXgW2SwJbi_xYw'}
+                >
+                
+                {polnilnice.map(
+                  charger => (
+                    <Marker 
+                      key={charger.opis} 
+                      longitude={charger.longitude} 
+                      latitude={charger.latitude} >
+
+                        <button className="marker-btn" onClick={(e) => {
+                          e.preventDefault();
+                          setselectedCharger(charger);
+                        }}>
+                          <img src="marker.png" alt="Marker icon"/>
+                        </button>
+
+                    </Marker>
+                  ))
                 }
-            </div>
+
+                {selectedCharger ? (
+                  <Popup 
+                    latitude={selectedCharger.latitude}
+                    longitude={selectedCharger.longitude}
+                    onClose={() => {
+                      setselectedCharger(null);
+                    }}  
+                  >
+                    <div>
+                      <h2><strong>{selectedCharger.opis}</strong></h2>
+                      <p>{selectedCharger.naslov}</p>
+                    </div>
+                  </Popup>
+                ) : null}
+                <NavigationControl style={navControlStyle} />
+            </ReactMapGL>
         </div>
-    )
+        </div>
+      );
 }
 
 export default ElektricnePolnilnice
