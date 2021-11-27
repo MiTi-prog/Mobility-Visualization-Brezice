@@ -1,31 +1,83 @@
-import React from 'react'
-import izposojevalnice from '../data/izposojevalnice_koles.json';
+import React, { useEffect, useState } from 'react';
+import kolesa from '../data/izposojevalnice_koles.json';
 import Header from './Header';
+import ReactMapGL, { Marker, Popup } from 'react-map-gl';
+ 
+ReactMapGL.accessToken = 'pk.eyJ1IjoibWl0aTIxIiwiYSI6ImNrdzNoamxwdTFka2syb3JvdWRhM3EwNW8ifQ.OV5IlhtvWXgW2SwJbi_xYw';
 
 function IzposojevalniceKoles() {
-    return (
+    const [long, SetLong] = useState(15.5965);
+    const [lat, SetLat] = useState(45.9088);
+    
+    const [viewport, setViewport] = React.useState({
+        longitude: long,
+        latitude: lat,
+        center: [long, lat],
+        zoom: 13
+      });
+
+    const [selectedBike, setSelectedBike] = useState(null);
+    
+    //[] - na koncu effecta tuki pove, da se ta akcija izvede samo 1x (enako kot componentDidMount())!
+    useEffect(() => {
+      const listener = e => {
+        if (e.key === "Escape") { setSelectedBike(null); }
+      };
+      window.addEventListener("keydown", listener)
+    }, []);
+    
+      return(
         <div className="">
-            <Header />
-            <header className="bg-white shadow">
-                <div className="max-w-full mx-auto py-6">
-                    <h1 className="text-3xl font-bold text-gray-900 px-4 sm:px-6 lg:px-8">Izposojevalnica koles</h1>
-                </div>
-            </header>
-            <div className="px-4 sm:px-6 lg:px-8 mt-8">
-                {
-                    izposojevalnice.map (data => 
-                        <div>
-                            <span><b> Lokacija izposojevalnice: </b>{data.lokacija}</span>
-                            <span><b> Opis lokacije: </b>{data.opis_lokacije}</span>
-                            <span><b> Število koles: </b>{data.izposojevalnica_stKoles}</span>
-                            <span><b> Kolesarnica: </b>{data.kolesarnica}</span>
-                            <span><b> Stojala za kolesa: </b>{data.stojala_za_kolesa}</span>    
-                        </div>
-                    )
+
+        
+        <Header />
+        <div className="w-full h-full">
+            <ReactMapGL 
+                {...viewport}
+                width="100vw" 
+                height="94vh" 
+                mapStyle="mapbox://styles/mapbox/light-v10"
+                onViewportChange={setViewport}
+                mapboxApiAccessToken={'pk.eyJ1IjoibWl0aTIxIiwiYSI6ImNrdzNoamxwdTFka2syb3JvdWRhM3EwNW8ifQ.OV5IlhtvWXgW2SwJbi_xYw'}
+                >
+                
+                {kolesa.map(
+                  kolo => (
+                    <Marker 
+                      key={kolo.opis_lokacije} 
+                      longitude={kolo.LON} 
+                      latitude={kolo.LAT} >
+
+                        <button className="marker-btn" onClick={(e) => {
+                          e.preventDefault();
+                          setSelectedBike(kolo);
+                        }}>
+                          <img src="marker.png" alt="Marker icon"/>
+                        </button>
+
+                    </Marker>
+                  ))
                 }
-            </div>
+
+                {selectedBike ? (
+                  <Popup 
+                    latitude={selectedBike.LAT}
+                    longitude={selectedBike.LON}
+                    onClose={() => {
+                      setSelectedBike(null);
+                    }}  
+                  >
+                    <div>
+                      <h2>{selectedBike.lokacija}</h2>
+                      <p>{selectedBike.opis_lokacije}</p>
+                    </div>
+                  </Popup>
+                ) : null}
+
+            </ReactMapGL>
         </div>
-    )
+        </div>
+      );
 }
 
 export default IzposojevalniceKoles
