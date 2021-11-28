@@ -2,3 +2,19 @@
 .mapboxgl-control-container {
     display: none;
 }
+
+.main-header {
+    z-index: 100;
+    top: 1%;
+    position: absolute;
+    width: 80%;
+    justify-content: center;
+    margin-left: 10%;
+}
+.main-header-down {
+    display: flex;
+    justify-content: center;
+}    
+.map-component {
+    z-index: -1;
+}

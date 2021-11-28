@@ -11,7 +11,8 @@ import './app.css';
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect
 } from "react-router-dom";
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
         <Router>
           <Switch>
             <Route exact path="/">
-              <Home />
+              <Redirect to="/parkirna-mesta" />
             </Route>
             <Route path="/parkirna-mesta">
               <ParkirnaMesta />

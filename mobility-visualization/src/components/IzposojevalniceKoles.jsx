@@ -18,7 +18,7 @@ function IzposojevalniceKoles() {
 
     const navControlStyle= {
       right: 50,
-      top: 50
+      top: 200
     };
 
     const [selectedBike, setSelectedBike] = useState(null);
@@ -32,13 +32,13 @@ function IzposojevalniceKoles() {
     }, []);
     
       return(
-        <div className="">
+        <div className="map-component">
         <Header />
         <div className="w-full h-full">
             <ReactMapGL 
                 {...viewport}
                 width="100vw" 
-                height="90vh" 
+                height="100vh" 
                 mapStyle="mapbox://styles/mapbox/light-v10"
                 onViewportChange={setViewport}
                 mapboxApiAccessToken={'pk.eyJ1IjoibWl0aTIxIiwiYSI6ImNrdzNoamxwdTFka2syb3JvdWRhM3EwNW8ifQ.OV5IlhtvWXgW2SwJbi_xYw'}
@@ -56,7 +56,7 @@ function IzposojevalniceKoles() {
                           e.preventDefault();
                           setSelectedBike(kolo);
                         }}>
-                          <img src="marker.png" alt="Marker icon"/>
+                          <img src="mapbox-marker-icon-20px-green.png" alt="Marker icon"/>
                         </button>
 
                     </Marker>
@@ -81,7 +81,9 @@ function IzposojevalniceKoles() {
               <NavigationControl style={navControlStyle} />
             </ReactMapGL>
         </div>
+        
         </div>
+
       );
 }
 
