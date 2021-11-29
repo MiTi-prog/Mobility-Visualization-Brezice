@@ -1,10 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import defibrilatorji from '../data/lokacije_defibrilatorjev.json';
 import Header from './Header';
-import ReactMapGL, {
-  Marker,
-  Popup, 
-  NavigationControl
+import ReactMapGL, {Marker, Popup, NavigationControl, FullscreenControl
 } from 'react-map-gl';
  
 ReactMapGL.accessToken = 'pk.eyJ1IjoibWl0aTIxIiwiYSI6ImNrdzNoamxwdTFka2syb3JvdWRhM3EwNW8ifQ.OV5IlhtvWXgW2SwJbi_xYw';
@@ -23,6 +20,11 @@ function Defibrilatorji() {
     const navControlStyle = {
       right: 50,
       top: 200
+    };
+
+    const fullscreenControlStyle= {
+      right: 50,
+      top: 150
     };
 
     /*const map = mapRef.current.getMap();
@@ -87,6 +89,7 @@ function Defibrilatorji() {
                   </Popup>
                 ) : null}
               <NavigationControl style={navControlStyle} />
+              <FullscreenControl style={fullscreenControlStyle} />   
             </ReactMapGL>
         </div>
         </div>

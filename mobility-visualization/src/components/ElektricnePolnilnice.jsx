@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import polnilnice from '../data/elektricne_polnilnice.json';
 import Header from './Header';
-import ReactMapGL, { Marker, Popup, NavigationControl } from 'react-map-gl';
+import ReactMapGL, { Marker, Popup, NavigationControl, FullscreenControl } from 'react-map-gl';
  
 ReactMapGL.accessToken = 'pk.eyJ1IjoibWl0aTIxIiwiYSI6ImNrdzNoamxwdTFka2syb3JvdWRhM3EwNW8ifQ.OV5IlhtvWXgW2SwJbi_xYw';
 
@@ -20,6 +20,12 @@ function ElektricnePolnilnice() {
         right: 50,
         top: 200
       };
+
+    
+    const fullscreenControlStyle= {
+        right: 50,
+        top: 150
+    };
 
     const [selectedCharger, setselectedCharger] = useState(null);
     
@@ -77,6 +83,7 @@ function ElektricnePolnilnice() {
                   </Popup>
                 ) : null}
                 <NavigationControl style={navControlStyle} />
+                <FullscreenControl style={fullscreenControlStyle} />   
             </ReactMapGL>
         </div>
         </div>
