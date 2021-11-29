@@ -24,7 +24,17 @@
     left: 5%;
     background-color: #4472a1;
     opacity: 90%;
+    overflow-y: scroll;
 }
-.blur {
-    
+/*.defibrilator-info .description {
+    content: '';
+    border-bottom: 2px #f6dd31;
+}*/
+.sidebar::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+}
+  
+.sidebar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }

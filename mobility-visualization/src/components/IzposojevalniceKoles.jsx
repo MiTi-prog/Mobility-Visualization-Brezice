@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import kolesa from '../data/izposojevalnice_koles.json';
 import Header from './Header';
-import ReactMapGL, { Marker, Popup, NavigationControl, FlyToInterpolator } from 'react-map-gl';
- 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import ReactMapGL, { Marker, Popup, NavigationControl, FlyToInterpolator } from 'react-map-gl'; 
+
 ReactMapGL.accessToken = 'pk.eyJ1IjoibWl0aTIxIiwiYSI6ImNrdzNoamxwdTFka2syb3JvdWRhM3EwNW8ifQ.OV5IlhtvWXgW2SwJbi_xYw';
 
 function IzposojevalniceKoles() {
@@ -113,6 +114,27 @@ function IzposojevalniceKoles() {
                 ) : null}
               <NavigationControl style={navControlStyle} />
             </ReactMapGL>
+            {/* Sidebar */}
+            <div className="w-full h-3/4 lg:-mt-96 lg:w-1/4 px-8 py-5 ml-auto rounded-md sidebar blur">
+                  <div className="flex flex-col text-white">
+                    {kolesa.map((bike) => (
+                      <div className="defibrilator-info" key={bike.LON}>
+                          <h3 className="title font-bold text-1xl my-4 location-title">{bike.opis_lokacije}</h3>
+                          <p className="description text-gray-400 location-description">
+                            <FontAwesomeIcon icon="coffee" />Naslov: {bike.lokacija}
+                          </p>
+                          <p className="description text-gray-400 location-description">
+                            <FontAwesomeIcon icon="coffee" />Št. koles: {bike.izposojevalnica_stKoles}
+                          </p>
+                          <p className="description text-gray-400 location-description">
+                            <FontAwesomeIcon icon="coffee" />GPS kolesarnice: {bike.gps_kolesarnice}
+                          </p>
+                          
+                      </div>
+                    ))
+                    }
+                  </div>
+            </div>
         </div>
         
         </div>

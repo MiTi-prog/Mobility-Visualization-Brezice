@@ -6,6 +6,7 @@ import IzposojevalniceKoles from './components/IzposojevalniceKoles.jsx';
 import Defibrilatorji from './components/Defibrilatorji.jsx';
 import ParkirnaMesta from './components/ParkirnaMesta.jsx';
 import './app.css';
+import 'font-awesome/css/font-awesome.min.css';
 
 
 import {

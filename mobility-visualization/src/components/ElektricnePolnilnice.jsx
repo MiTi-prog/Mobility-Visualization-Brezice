@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import polnilnice from '../data/elektricne_polnilnice.json';
 import Header from './Header';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ReactMapGL, { 
   Marker, 
   Popup, 
@@ -118,6 +119,32 @@ function ElektricnePolnilnice() {
                 ) : null}
                 <NavigationControl style={navControlStyle} />
             </ReactMapGL>
+            {/* Sidebar */}
+            <div className="w-full h-3/4 lg:-mt-96 lg:w-1/4 px-8 py-5 ml-auto rounded-md sidebar blur">
+                  <div className="flex flex-col text-white">
+                    {polnilnice.map((charg) => (
+                      <div className="defibrilator-info" key={charg.longitude}>
+                          <h3 className="title font-bold text-1xl my-4 location-title">{charg.opis}</h3>
+                          <p className="description text-gray-400 location-description">
+                            <FontAwesomeIcon icon="coffee" />Naslov: {charg.naslov}
+                          </p>
+                          <p className="description text-gray-400 location-description">
+                            <FontAwesomeIcon icon="coffee" />Št. vtičnic: {charg.vticnnicaSt}
+                          </p>
+                          <p className="description text-gray-400 location-description">
+                            <FontAwesomeIcon icon="coffee" />Vrsta Vtičnike: {charg.vrstaVticnice}
+                          </p>
+                          <p className="description text-gray-400 location-description">
+                            <FontAwesomeIcon icon="coffee" />Nazivna moč: {charg.nazivnaMoc}
+                          </p>
+                          <p className="description text-gray-400 location-description">
+                            <FontAwesomeIcon icon="coffee" />Cena: {charg.cena}
+                          </p>
+                      </div>
+                    ))
+                    }
+                  </div>
+            </div>
         </div>
         </div>
       );
