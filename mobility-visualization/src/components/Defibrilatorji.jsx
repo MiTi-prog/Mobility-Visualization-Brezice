@@ -4,7 +4,8 @@ import Header from './Header';
 import ReactMapGL, {
   Marker,
   Popup, 
-  NavigationControl
+  NavigationControl,
+  FlyToInterpolator
 } from 'react-map-gl';
  
 ReactMapGL.accessToken = 'pk.eyJ1IjoibWl0aTIxIiwiYSI6ImNrdzNoamxwdTFka2syb3JvdWRhM3EwNW8ifQ.OV5IlhtvWXgW2SwJbi_xYw';
@@ -25,11 +26,29 @@ function Defibrilatorji() {
       top: 200
     };
 
-    /*const map = mapRef.current.getMap();
-    const rotateCamera = (timestamp) => {
-      map.rotateTo((timestamp / 100) % 360, { duration: 0 })
-      requestAnimationFrame(rotateCamera) 
-    }*/
+    const zoomToMarker = (lo,la,cent) => {
+      setViewport({
+        ...viewport, 
+        longitude: lo, 
+        latitude: la, 
+        center: cent, 
+        zoom: 15,
+        transitionDuration: 1500,
+        transitionInterpolator: new FlyToInterpolator()
+      });
+    };
+
+    const zoomOfMarker = (lo,la,cent) => {
+      setViewport({
+        ...viewport, 
+        longitude: lo, 
+        latitude: la, 
+        center: cent, 
+        zoom: 11,
+        transitionDuration: 1500,
+        transitionInterpolator: new FlyToInterpolator()
+      });
+    };
     
     const [selectedDefibrilator, setselectedDefibrilator] = useState(null);
     
@@ -64,8 +83,13 @@ function Defibrilatorji() {
                         <button className="marker-btn" onClick={(e) => {
                           e.preventDefault();
                           setselectedDefibrilator(defibrilator);
+
+                          zoomToMarker(
+                            defibrilator.longitude,
+                            defibrilator.latitude,
+                            [defibrilator.longitude, defibrilator.latitude]);
                         }}>
-                          <img src="mapbox-marker-icon-20px-green.png" alt="Marker icon"/>
+                          <img src="icons/defibrilator-icon.png" alt="Marker icon"/>
                         </button>
 
                     </Marker>
@@ -78,6 +102,10 @@ function Defibrilatorji() {
                     longitude={selectedDefibrilator.longitude}
                     onClose={() => {
                       setselectedDefibrilator(null);
+                      zoomOfMarker(
+                        selectedDefibrilator.longitude,
+                        selectedDefibrilator.latitude,
+                        [selectedDefibrilator.longitude, selectedDefibrilator.latitude]);
                     }}  
                   >
                     <div>

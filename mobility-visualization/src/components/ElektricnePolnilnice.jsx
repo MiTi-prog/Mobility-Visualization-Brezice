@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import polnilnice from '../data/elektricne_polnilnice.json';
 import Header from './Header';
-import ReactMapGL, { Marker, Popup, NavigationControl, FlyToInterpolator } from 'react-map-gl';
+import ReactMapGL, { 
+  Marker, 
+  Popup, 
+  NavigationControl, 
+  FlyToInterpolator 
+} from 'react-map-gl';
  
 ReactMapGL.accessToken = 'pk.eyJ1IjoibWl0aTIxIiwiYSI6ImNrdzNoamxwdTFka2syb3JvdWRhM3EwNW8ifQ.OV5IlhtvWXgW2SwJbi_xYw';
 

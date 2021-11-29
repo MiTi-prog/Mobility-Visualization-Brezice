@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import kolesa from '../data/izposojevalnice_koles.json';
 import Header from './Header';
-import ReactMapGL, { Marker, Popup, NavigationControl } from 'react-map-gl';
+import ReactMapGL, { Marker, Popup, NavigationControl, FlyToInterpolator } from 'react-map-gl';
  
 ReactMapGL.accessToken = 'pk.eyJ1IjoibWl0aTIxIiwiYSI6ImNrdzNoamxwdTFka2syb3JvdWRhM3EwNW8ifQ.OV5IlhtvWXgW2SwJbi_xYw';
 
@@ -19,6 +19,30 @@ function IzposojevalniceKoles() {
     const navControlStyle= {
       right: 50,
       top: 200
+    };
+
+    const zoomToMarker = (lo,la,cent) => {
+      setViewport({
+        ...viewport, 
+        longitude: lo, 
+        latitude: la, 
+        center: cent, 
+        zoom: 15,
+        transitionDuration: 1500,
+        transitionInterpolator: new FlyToInterpolator()
+      });
+    };
+
+    const zoomOfMarker = (lo,la,cent) => {
+      setViewport({
+        ...viewport, 
+        longitude: lo, 
+        latitude: la, 
+        center: cent, 
+        zoom: 13,
+        transitionDuration: 1500,
+        transitionInterpolator: new FlyToInterpolator()
+      });
     };
 
     const [selectedBike, setSelectedBike] = useState(null);
@@ -55,8 +79,13 @@ function IzposojevalniceKoles() {
                         <button className="marker-btn" onClick={(e) => {
                           e.preventDefault();
                           setSelectedBike(kolo);
+
+                          zoomToMarker(
+                            kolo.LON,
+                            kolo.LAT,
+                            [kolo.LON, kolo.LAT]);
                         }}>
-                          <img src="mapbox-marker-icon-20px-green.png" alt="Marker icon"/>
+                          <img src="icons/kolesa-icon.png" alt="Marker icon"/>
                         </button>
 
                     </Marker>
@@ -69,6 +98,10 @@ function IzposojevalniceKoles() {
                     longitude={selectedBike.LON}
                     onClose={() => {
                       setSelectedBike(null);
+                      zoomOfMarker(
+                        selectedBike.LON,
+                        selectedBike.LAT,
+                        [selectedBike.LON, selectedBike.LAT]);
                     }}
                     closeOnClick={false}  
                   >
