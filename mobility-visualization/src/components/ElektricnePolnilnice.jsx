@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import polnilnice from '../data/elektricne_polnilnice.json';
 import Header from './Header';
-import ReactMapGL, { Marker, Popup, NavigationControl } from 'react-map-gl';
+import ReactMapGL, { Marker, Popup, NavigationControl, FlyToInterpolator } from 'react-map-gl';
  
 ReactMapGL.accessToken = 'pk.eyJ1IjoibWl0aTIxIiwiYSI6ImNrdzNoamxwdTFka2syb3JvdWRhM3EwNW8ifQ.OV5IlhtvWXgW2SwJbi_xYw';
 
 function ElektricnePolnilnice() {
     const [long, SetLong] = useState(15.5965);
     const [lat, SetLat] = useState(45.9088);
-    
+    //const [center, setCenter] = useState([long, lat]);
+
     const [viewport, setViewport] = React.useState({
         longitude: long,
         latitude: lat,
@@ -16,10 +17,34 @@ function ElektricnePolnilnice() {
         zoom: 11
     });
     
-    const navControlStyle= {
+    const navControlStyle = {
         right: 50,
         top: 200
-      };
+    };
+
+    const zoomToMarker = (lo,la,cent) => {
+      setViewport({
+        ...viewport, 
+        longitude: lo, 
+        latitude: la, 
+        center: cent, 
+        zoom: 15,
+        transitionDuration: 1500,
+        transitionInterpolator: new FlyToInterpolator()
+      });
+    };
+
+    const zoomOfMarker = (lo,la,cent) => {
+      setViewport({
+        ...viewport, 
+        longitude: lo, 
+        latitude: la, 
+        center: cent, 
+        zoom: 11,
+        transitionDuration: 1500,
+        transitionInterpolator: new FlyToInterpolator()
+      });
+    };
 
     const [selectedCharger, setselectedCharger] = useState(null);
     
@@ -54,8 +79,14 @@ function ElektricnePolnilnice() {
                         <button className="marker-btn" onClick={(e) => {
                           e.preventDefault();
                           setselectedCharger(charger);
+                          
+                          zoomToMarker(
+                            charger.longitude,
+                            charger.latitude,
+                            [charger.longitude, charger.latitude]);
                         }}>
-                          <img src="mapbox-marker-icon-20px-green.png" alt="Marker icon"/>
+
+                          <img className="marker-icon" src="icons/polnilnica-icon.png" alt="Marker icon"/>
                         </button>
 
                     </Marker>
@@ -68,6 +99,10 @@ function ElektricnePolnilnice() {
                     longitude={selectedCharger.longitude}
                     onClose={() => {
                       setselectedCharger(null);
+                      zoomOfMarker(
+                        selectedCharger.longitude,
+                        selectedCharger.latitude,
+                        [selectedCharger.longitude, selectedCharger.latitude]);
                     }}  
                   >
                     <div>
