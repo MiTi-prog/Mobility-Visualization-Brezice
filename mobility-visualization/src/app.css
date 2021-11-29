@@ -2,7 +2,6 @@
 .mapboxgl-control-container {
     display: none;
 }
-
 .main-header {
     z-index: 100;
     top: 1%;
@@ -17,4 +16,15 @@
 }    
 .map-component {
     z-index: -1;
+}
+.sidebar {
+    z-index: 100;
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    background-color: #4472a1;
+    opacity: 90%;
+}
+.blur {
+    
 }

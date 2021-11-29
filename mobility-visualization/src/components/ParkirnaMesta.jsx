@@ -1,10 +1,97 @@
 import React from 'react'
 import parkirisca from '../data/lokacije_parkirnih_mest.json';
 import Header from './Header';
+import ReactMapGL, { Marker, Popup, NavigationControl, FlyToInterpolator, GeoJSONLayer } from 'react-map-gl';
+import DrawControl from "react-mapbox-gl-draw";
+import "@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css";
+
+ReactMapGL.accessToken = 'pk.eyJ1IjoibWl0aTIxIiwiYSI6ImNrdzNoamxwdTFka2syb3JvdWRhM3EwNW8ifQ.OV5IlhtvWXgW2SwJbi_xYw';
+
 
 function ParkirnaMesta() {
-
+    /*
+    onDrawCreate = ({ features }) => {
+        console.log(features);
+    };
+    
+    onDrawUpdate = ({ features }) => {
+        console.log({ features });
+    };
+    */
+    
+    const geojson = {
+        type: "FeatureCollection",
+        features: [
+        {
+            type: "Feature",
+            properties: {
+            text: "Fort Greene"
+        },
+        geometry: {
+            type: "Polygon",
+            coordinates: [
+                [
+                [-73.97777080535889, 40.69336192556367],
+                [-73.97704124450682, 40.68986390865585],
+                [-73.97315740585327, 40.68970120572578],
+                [-73.97388696670532, 40.69323177008439],
+                [-73.97777080535889, 40.69336192556367],
+                ]
+            ]
+        }
+        }
+        ]
+    };
+    
+    const geojsonStyles = {
+        lineLayout: {
+            "line-join": "round",
+            "line-cap": "round"
+        },
+        linePaint: {
+            "line-color": "#ff11ff",
+            "line-width": 4,
+            "line-opacity": 1
+        },
+        symbolLayout: {
+            "text-field": "{text}",
+            "symbol-placement": "line",
+            "text-rotation-alignment": "map",
+            "text-size": {
+              base: 1,
+              stops: [[9, 9], [14, 12]]
+            }
+        },
+        symbolPaint: {
+            "text-color": "rgba(0, 0, 0, 1)",
+            "text-halo-color": "rgba(255, 255, 255, 1)",
+            "text-halo-width": 2
+        }
+    };
+    
     return (
+        <div className="App">
+            <ReactMapGL
+                style="mapbox://styles/mapbox/light-v10" // eslint-disable-line
+                containerStyle={{
+                    height: "100vh",
+                    width: "100vw"
+                }}
+                zoom={[16]}
+                center={[-73.9757752418518, 40.69144210646147]}
+            >
+                <DrawControl
+                    position="top-left"
+                    onDrawCreate={this.onDrawCreate}
+                    onDrawUpdate={this.onDrawUpdate}
+                />
+                {/*<GeoJSONLayer {...geojsonStyles} data={geojson} />
+                */}
+            </ReactMapGL>
+        </div>
+    );
+
+        {/*
         <div className="">
             <Header />
             <header className="bg-white shadow">
@@ -26,8 +113,7 @@ function ParkirnaMesta() {
                 }
             </div>
         </div>
-    );
-
+            );*/}
 }
 
 export default ParkirnaMesta

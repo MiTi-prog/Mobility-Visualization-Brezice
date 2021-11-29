@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import defibrilatorji from '../data/lokacije_defibrilatorjev.json';
 import Header from './Header';
+import Sidebar from './Sidebar';
 import ReactMapGL, {
   Marker,
   Popup, 
@@ -32,7 +33,7 @@ function Defibrilatorji() {
         longitude: lo, 
         latitude: la, 
         center: cent, 
-        zoom: 15,
+        zoom: 16,
         transitionDuration: 1500,
         transitionInterpolator: new FlyToInterpolator()
       });
@@ -63,6 +64,7 @@ function Defibrilatorji() {
       return(
         <div className="">
         <Header />
+        <Sidebar />
         <div className="w-full h-full">
             <ReactMapGL 
                 {...viewport}
