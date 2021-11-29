@@ -6,6 +6,7 @@ import ReactMapGL, {
   Marker, 
   Popup, 
   NavigationControl, 
+  FullscreenControl,
   FlyToInterpolator 
 } from 'react-map-gl';
  
@@ -26,6 +27,11 @@ function ElektricnePolnilnice() {
     const navControlStyle = {
         right: 50,
         top: 200
+    };
+
+    const fullscreenControlStyle= {
+      right: 50,
+      top: 150
     };
 
     const zoomToMarker = (lo,la,cent) => {
@@ -118,6 +124,7 @@ function ElektricnePolnilnice() {
                   </Popup>
                 ) : null}
                 <NavigationControl style={navControlStyle} />
+                <FullscreenControl style={fullscreenControlStyle} />
             </ReactMapGL>
             {/* Sidebar */}
             <div className="w-full h-3/4 lg:-mt-96 lg:w-1/4 px-8 py-5 ml-auto rounded-md sidebar blur">

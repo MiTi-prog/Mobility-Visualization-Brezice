@@ -2,7 +2,13 @@ import React, { useEffect, useState } from 'react';
 import kolesa from '../data/izposojevalnice_koles.json';
 import Header from './Header';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import ReactMapGL, { Marker, Popup, NavigationControl, FlyToInterpolator } from 'react-map-gl'; 
+import ReactMapGL, { 
+  Marker, 
+  Popup, 
+  NavigationControl, 
+  FullscreenControl,
+  FlyToInterpolator 
+} from 'react-map-gl'; 
 
 ReactMapGL.accessToken = 'pk.eyJ1IjoibWl0aTIxIiwiYSI6ImNrdzNoamxwdTFka2syb3JvdWRhM3EwNW8ifQ.OV5IlhtvWXgW2SwJbi_xYw';
 
@@ -20,6 +26,11 @@ function IzposojevalniceKoles() {
     const navControlStyle= {
       right: 50,
       top: 200
+    };
+
+    const fullscreenControlStyle= {
+      right: 50,
+      top: 150
     };
 
     const zoomToMarker = (lo,la,cent) => {
@@ -113,6 +124,7 @@ function IzposojevalniceKoles() {
                   </Popup>
                 ) : null}
               <NavigationControl style={navControlStyle} />
+              <FullscreenControl style={fullscreenControlStyle} />
             </ReactMapGL>
             {/* Sidebar */}
             <div className="w-full h-3/4 lg:-mt-96 lg:w-1/4 px-8 py-5 ml-auto rounded-md sidebar blur">
