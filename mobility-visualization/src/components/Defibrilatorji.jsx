@@ -67,7 +67,7 @@ function Defibrilatorji() {
                           e.preventDefault();
                           setselectedDefibrilator(defibrilator);
                         }}>
-                          <img src="mapbox-marker-icon-20px-green.png" alt="Marker icon"/>
+                          <img src="icons/aed_zelen.png" alt="Marker icon"/>
                         </button>
 
                     </Marker>

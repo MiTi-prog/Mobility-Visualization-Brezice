@@ -61,7 +61,7 @@ function IzposojevalniceKoles() {
                           e.preventDefault();
                           setSelectedBike(kolo);
                         }}>
-                          <img src="mapbox-marker-icon-20px-green.png" alt="Marker icon"/>
+                          <img src="icons/bicikl.png" alt="Marker icon"/>
                         </button>
 
                     </Marker>

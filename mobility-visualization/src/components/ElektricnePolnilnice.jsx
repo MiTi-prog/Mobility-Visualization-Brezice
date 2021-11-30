@@ -61,7 +61,7 @@ function ElektricnePolnilnice() {
                           e.preventDefault();
                           setselectedCharger(charger);
                         }}>
-                          <img src="mapbox-marker-icon-20px-green.png" alt="Marker icon"/>
+                          <img src="icons/charger.png" alt="Marker icon"/>
                         </button>
 
                     </Marker>
