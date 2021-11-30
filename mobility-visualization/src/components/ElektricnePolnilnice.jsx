@@ -41,7 +41,7 @@ function ElektricnePolnilnice() {
         latitude: la, 
         center: cent, 
         zoom: 15,
-        transitionDuration: 1500,
+        transitionDuration: 1000,
         transitionInterpolator: new FlyToInterpolator()
       });
     };
@@ -53,7 +53,7 @@ function ElektricnePolnilnice() {
         latitude: la, 
         center: cent, 
         zoom: 11,
-        transitionDuration: 1500,
+        transitionDuration: 1000,
         transitionInterpolator: new FlyToInterpolator()
       });
     };

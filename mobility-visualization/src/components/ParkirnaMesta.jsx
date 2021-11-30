@@ -108,8 +108,8 @@ function ParkirnaMesta() {
         longitude: lo, 
         latitude: la, 
         center: cent, 
-        zoom: 15,
-        transitionDuration: 1500,
+        zoom: 17,
+        transitionDuration: 1000,
         transitionInterpolator: new FlyToInterpolator()
       });
     };
@@ -120,18 +120,18 @@ function ParkirnaMesta() {
         longitude: lo, 
         latitude: la, 
         center: cent, 
-        zoom: 11,
-        transitionDuration: 1500,
+        zoom: 15,
+        transitionDuration: 1000,
         transitionInterpolator: new FlyToInterpolator()
       });
     };
 
-    const [selectedParkPlac, setselectedParkPlac] = useState(null);
+    const [selectedPark, setSelectedPark] = useState(null);
     
     //[] - na koncu effecta tuki pove, da se ta akcija izvede samo 1x (enako kot componentDidMount())!
     useEffect(() => {
       const listener = e => {
-        if (e.key === "Escape") { setselectedParkPlac(null); }
+        if (e.key === "Escape") { setSelectedPark(null); }
       };
       window.addEventListener("keydown", listener)
     }, []);
@@ -176,20 +176,20 @@ function ParkirnaMesta() {
                 >
                 
                 {parkirisca.map(
-                  parkplac => (
+                  park => (
                     <Marker 
-                      key={parkplac.lokacija_parkirisca} 
-                      longitude={parkplac.LON} 
-                      latitude={parkplac.LAT} >
+                      key={park.lokacija_parkirisca} 
+                      longitude={park.LON} 
+                      latitude={park.LAT} >
 
                         <button className="marker-btn" onClick={(e) => {
                           e.preventDefault();
-                          setselectedParkPlac(parkplac);
+                          setSelectedPark(park);
                           
                           zoomToMarker(
-                            parkplac.longitude,
-                            parkplac.latitude,
-                            [parkplac.longitude, parkplac.latitude]);
+                            park.LON,
+                            park.LAT,
+                            [park.LON, park.LAT]);
                         }}>
 
                           <img className="marker-icon" src="icons/parking.png" alt="Marker icon"/>
@@ -199,21 +199,21 @@ function ParkirnaMesta() {
                   ))
                 }
 
-                {selectedParkPlac ? (
+                {selectedPark? (
                   <Popup 
-                    latitude={selectedParkPlac.latitude}
-                    longitude={selectedParkPlac.longitude}
+                    latitude={selectedPark.LAT}
+                    longitude={selectedPark.LON}
                     onClose={() => {
-                      setselectedParkPlac(null);
+                      setSelectedPark(null);
                       zoomOfMarker(
-                        selectedParkPlac.longitude,
-                        selectedParkPlac.latitude,
-                        [selectedParkPlac.longitude, selectedParkPlac.latitude]);
+                        selectedPark.LON,
+                        selectedPark.LAT,
+                        [selectedPark.LON, selectedPark.LAT]);
                     }}  
                   >
                     <div>
-                      <h2><strong>{selectedParkPlac.lokacija_parkirisca}</strong></h2>
-                      <p>{selectedParkPlac.opis_lokacije}</p>
+                      <h2><strong>{selectedPark.lokacija_parkirisca}</strong></h2>
+                      <p>{selectedPark.opis_lokacije}</p>
                     </div>
                   </Popup>
                 ) : null}
@@ -223,23 +223,23 @@ function ParkirnaMesta() {
             {/* Sidebar */}
             <div className="w-full h-3/4 lg:-mt-96 lg:w-1/4 px-8 py-5 ml-auto rounded-md sidebar blur">
                   <div className="flex flex-col text-white">
-                    {parkirisca.map((plac) => (
-                      <div className="defibrilator-info" key={plac.longitude}>
-                          <h3 className="title font-bold text-1xl my-4 location-title">{plac.opis_lokacije}</h3>
+                    {parkirisca.map((park) => (
+                      <div className="defibrilator-info" key={park.LON}>
+                          <h3 className="title font-bold text-1xl my-4 location-title">{park.opis_lokacije}</h3>
                           <p className="description text-gray-400 location-description">
-                            <FontAwesomeIcon icon="coffee" />Naslov: {plac.lokacija_parkirisca}
+                            <FontAwesomeIcon icon="coffee" />Naslov: {park.lokacija_parkirisca}
                           </p>
                           <p className="description text-gray-400 location-description">
-                            <FontAwesomeIcon icon="coffee" />GPS: {plac.gps_parkirisca}
+                            <FontAwesomeIcon icon="coffee" />GPS: {park.gps_parkirisca}
                           </p>
                           <p className="description text-gray-400 location-description">
-                            <FontAwesomeIcon icon="coffee" />Parkirni Prostori: {plac.parkirni_prostori}
+                            <FontAwesomeIcon icon="coffee" />Parkirni prostori: {park.parkirni_prostori}
                           </p>
                           <p className="description text-gray-400 location-description">
-                            <FontAwesomeIcon icon="coffee" />Parkirni Prostiri za Invalide: {plac.parkirni_prostori_za_invalide}
+                            <FontAwesomeIcon icon="coffee" />Parkirni prostori za invalide: {park.parkirni_prostori_za_invalide}
                           </p>
                           <p className="description text-gray-400 location-description">
-                            <FontAwesomeIcon icon="coffee" />Parkirni Režim: {plac.parkrini_rezim}
+                            <FontAwesomeIcon icon="coffee" />Parkirni režim: {park.parkrini_rezim}
                           </p>
                       </div>
                     ))

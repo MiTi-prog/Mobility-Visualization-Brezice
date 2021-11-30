@@ -33,8 +33,14 @@
 .sidebar::-webkit-scrollbar {
     display: none;  /* Chrome, Safari and Opera */
 }
-  
 .sidebar {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
+}
+.about {
+    background-color: #f6f6f4;
+}
+.authors {
+    background-color: #4472a1;
+    opacity: 80%;
 }
