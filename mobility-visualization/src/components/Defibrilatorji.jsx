@@ -99,7 +99,7 @@ function Defibrilatorji() {
                               defibrilator.latitude,
                               [defibrilator.longitude, defibrilator.latitude]);
                           }}>
-                            <img src="icons/defibrilator-icon.png" alt="Marker icon"/>
+                            <img src="icons/aed_zelen.png" alt="Marker icon"/>
                           </button>
 
                       </Marker>

@@ -98,7 +98,7 @@ function ElektricnePolnilnice() {
                             [charger.longitude, charger.latitude]);
                         }}>
 
-                          <img className="marker-icon" src="icons/polnilnica-icon.png" alt="Marker icon"/>
+                          <img className="marker-icon" src="icons/charger.png" alt="Marker icon"/>
                         </button>
 
                     </Marker>
