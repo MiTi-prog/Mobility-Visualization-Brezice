@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect, useState, useRef } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import parkirisca from '../data/lokacije_parkirnih_mest.json';
 import Header from './Header';
 import ReactMapGL, {
@@ -6,6 +7,7 @@ import ReactMapGL, {
      Popup, 
      NavigationControl, 
      FlyToInterpolator, 
+     FullscreenControl,
      GeoJSONLayer 
 } from 'react-map-gl';
 
@@ -78,17 +80,16 @@ function ParkirnaMesta() {
     };
 
     */}
-
-
-    const [long, SetLong] = useState(15.5965);
-    const [lat, SetLat] = useState(45.9088);
+    
+    const [long, SetLong] = useState(15.595459);
+    const [lat, SetLat] = useState(45.9057747);
     //const [center, setCenter] = useState([long, lat]);
 
     const [viewport, setViewport] = React.useState({
         longitude: long,
         latitude: lat,
         center: [long, lat],
-        zoom: 11
+        zoom: 15
     });
     
     const navControlStyle = {
@@ -174,24 +175,24 @@ function ParkirnaMesta() {
                 mapboxApiAccessToken={'pk.eyJ1IjoibWl0aTIxIiwiYSI6ImNrdzNoamxwdTFka2syb3JvdWRhM3EwNW8ifQ.OV5IlhtvWXgW2SwJbi_xYw'}
                 >
                 
-                {polnilnice.map(
-                  charger => (
+                {parkirisca.map(
+                  parkplac => (
                     <Marker 
-                      key={charger.opis} 
-                      longitude={charger.longitude} 
-                      latitude={charger.latitude} >
+                      key={parkplac.lokacija_parkirisca} 
+                      longitude={parkplac.LON} 
+                      latitude={parkplac.LAT} >
 
                         <button className="marker-btn" onClick={(e) => {
                           e.preventDefault();
-                          setselectedParkPlac(charger);
+                          setselectedParkPlac(parkplac);
                           
                           zoomToMarker(
-                            charger.longitude,
-                            charger.latitude,
-                            [charger.longitude, charger.latitude]);
+                            parkplac.longitude,
+                            parkplac.latitude,
+                            [parkplac.longitude, parkplac.latitude]);
                         }}>
 
-                          <img className="marker-icon" src="icons/charger.png" alt="Marker icon"/>
+                          <img className="marker-icon" src="icons/parking.png" alt="Marker icon"/>
                         </button>
 
                     </Marker>
@@ -211,8 +212,8 @@ function ParkirnaMesta() {
                     }}  
                   >
                     <div>
-                      <h2><strong>{selectedParkPlac.opis}</strong></h2>
-                      <p>{selectedParkPlac.naslov}</p>
+                      <h2><strong>{selectedParkPlac.lokacija_parkirisca}</strong></h2>
+                      <p>{selectedParkPlac.opis_lokacije}</p>
                     </div>
                   </Popup>
                 ) : null}
@@ -222,23 +223,23 @@ function ParkirnaMesta() {
             {/* Sidebar */}
             <div className="w-full h-3/4 lg:-mt-96 lg:w-1/4 px-8 py-5 ml-auto rounded-md sidebar blur">
                   <div className="flex flex-col text-white">
-                    {polnilnice.map((charg) => (
-                      <div className="defibrilator-info" key={charg.longitude}>
-                          <h3 className="title font-bold text-1xl my-4 location-title">{charg.opis}</h3>
+                    {parkirisca.map((plac) => (
+                      <div className="defibrilator-info" key={plac.longitude}>
+                          <h3 className="title font-bold text-1xl my-4 location-title">{plac.opis_lokacije}</h3>
                           <p className="description text-gray-400 location-description">
-                            <FontAwesomeIcon icon="coffee" />Naslov: {charg.naslov}
+                            <FontAwesomeIcon icon="coffee" />Naslov: {plac.lokacija_parkirisca}
                           </p>
                           <p className="description text-gray-400 location-description">
-                            <FontAwesomeIcon icon="coffee" />Št. vtičnic: {charg.vticnnicaSt}
+                            <FontAwesomeIcon icon="coffee" />GPS: {plac.gps_parkirisca}
                           </p>
                           <p className="description text-gray-400 location-description">
-                            <FontAwesomeIcon icon="coffee" />Vrsta Vtičnike: {charg.vrstaVticnice}
+                            <FontAwesomeIcon icon="coffee" />Parkirni Prostori: {plac.parkirni_prostori}
                           </p>
                           <p className="description text-gray-400 location-description">
-                            <FontAwesomeIcon icon="coffee" />Nazivna moč: {charg.nazivnaMoc}
+                            <FontAwesomeIcon icon="coffee" />Parkirni Prostiri za Invalide: {plac.parkirni_prostori_za_invalide}
                           </p>
                           <p className="description text-gray-400 location-description">
-                            <FontAwesomeIcon icon="coffee" />Cena: {charg.cena}
+                            <FontAwesomeIcon icon="coffee" />Parkirni Režim: {plac.parkrini_rezim}
                           </p>
                       </div>
                     ))
