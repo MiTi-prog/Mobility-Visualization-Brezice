@@ -38,9 +38,21 @@
     scrollbar-width: none;  /* Firefox */
 }
 .about {
-    background-color: #f6f6f4;
+    background-color: transparent;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    margin-top: 18%;
+}
+.about-map {
+    z-index: -1;
+    position: absolute;
+    
 }
 .authors {
     background-color: #4472a1;
-    opacity: 80%;
+    opacity: 90%;
+}
+.description {
+    color: #d0d0d0;
 }

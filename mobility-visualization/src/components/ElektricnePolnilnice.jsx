@@ -98,7 +98,7 @@ function ElektricnePolnilnice() {
                             [charger.longitude, charger.latitude]);
                         }}>
 
-                          <img className="marker-icon" src="icons/charger.png" alt="Marker icon"/>
+                          <img className="marker-icon" src="icons/charger_blue.png" alt="Marker icon"/>
                         </button>
 
                     </Marker>
@@ -145,7 +145,7 @@ function ElektricnePolnilnice() {
                             <FontAwesomeIcon icon="coffee" />Nazivna moč: {charg.nazivnaMoc}
                           </p>
                           <p className="description text-gray-400 location-description">
-                            <FontAwesomeIcon icon="coffee" />Cena: {charg.cena}
+                            {/*<FontAwesomeIcon icon="coffee" />*/}Cena: {charg.cena}
                           </p>
                       </div>
                     ))

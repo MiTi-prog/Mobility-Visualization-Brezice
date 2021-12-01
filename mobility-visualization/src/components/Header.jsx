@@ -15,7 +15,6 @@ function Header() {
 			<div className="flex items-center justify-between h-16">
 				<div className="flex items-center">
 					<div className="flex-shrink-0">
-	
 						<div className="app-logo w-32">
 							<img src="logotip-brezice.svg" alt="Logotip občine Brežice" />
 						</div>
@@ -23,7 +22,7 @@ function Header() {
 					<div className="hidden md:block">
 						<div className="ml-10 flex items-baseline space-x-4">
 							<Link to="/parkirna-mesta">
-								<span className="text-gray-400 hover:border-gray-400 border-transparent border-2 p-8 px-3 py-2 rounded-md text-sm font-medium ">Parkirna mesta</span>
+								<span className="text-gray-400 border-2 hover:border-gray-400 border-transparent border-2 p-8 px-3 py-2 rounded-md text-sm font-medium ">Parkirna mesta</span>
 							</Link>
 
 							<Link to="/izposojevalnice-koles">

@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { scroller } from 'react-scroll';
 import defibrilatorji from '../data/lokacije_defibrilatorjev.json';
 import Header from './Header';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -40,7 +41,7 @@ function Defibrilatorji() {
         latitude: la, 
         center: cent, 
         zoom: 16,
-        transitionDuration: 1500,
+        transitionDuration: 1000,
         transitionInterpolator: new FlyToInterpolator()
       });
     };
@@ -52,9 +53,33 @@ function Defibrilatorji() {
         latitude: la, 
         center: cent, 
         zoom: 11,
-        transitionDuration: 1500,
+        transitionDuration: 1000,
         transitionInterpolator: new FlyToInterpolator()
       });
+    };
+
+    /*const scrollToSection = () => {
+      scroller.scrollTo('focused', {
+        duration: 800,
+        delay: 0,
+        smooth: "easeInOutQuart",
+      });
+    };
+    const myRef = useRef(null);
+    const executeScroll = () => myRef.scrollIntoView();*/
+
+
+    const ref = useRef(null);
+    const addClass = () => {
+      const span = ref.current;
+      span.className = 'focused';
+      console.log('marker enabled')
+    };
+    
+    const removeClass = () => {
+      const span = ref.current;
+      span.className = '';
+      console.log('marker disabled')
     };
     
     const [selectedDefibrilator, setselectedDefibrilator] = useState(null);
@@ -70,9 +95,6 @@ function Defibrilatorji() {
       return(
         <div className="">
           <Header />
-
-          
-
           <div className="w-full h-full">
               <ReactMapGL 
                   {...viewport}
@@ -93,7 +115,9 @@ function Defibrilatorji() {
                           <button className="marker-btn" onClick={(e) => {
                             e.preventDefault();
                             setselectedDefibrilator(defibrilator);
-
+                            addClass();
+                            //executeScroll();
+                            
                             zoomToMarker(
                               defibrilator.longitude,
                               defibrilator.latitude,
@@ -112,30 +136,38 @@ function Defibrilatorji() {
                       longitude={selectedDefibrilator.longitude}
                       onClose={() => {
                         setselectedDefibrilator(null);
+                        removeClass();
                         zoomOfMarker(
                           selectedDefibrilator.longitude,
                           selectedDefibrilator.latitude,
                           [selectedDefibrilator.longitude, selectedDefibrilator.latitude]);
                       }}  
                     >
+                      
                       <div>
-                        <h2><strong>{selectedDefibrilator.opis}</strong></h2>
-                        <p>- {selectedDefibrilator.delovni_cas}</p>
+                        <span>
+                          <h2><strong>{selectedDefibrilator.opis}</strong></h2>
+                          <p>- {selectedDefibrilator.delovni_cas}</p>
+                        </span>
                       </div>
                     </Popup>
                   ) : null}
                 <NavigationControl style={navControlStyle} />
                 <FullscreenControl style={fullscreenControlStyle} />
               </ReactMapGL>
+
               {/* Sidebar */}
               <div className="w-full h-3/4 lg:-mt-96 lg:w-1/4 px-8 py-5 ml-auto rounded-md sidebar blur">
                   <div className="flex flex-col text-white">
                     {defibrilatorji.map((def) => (
-                      <div className="defibrilator-info" key={def.longitude}>
+                      <div ref={ref} className="" key={def.longitude}>
+                        {/*ref={ (ref) => this.myRef=ref spodaj v div*/}
+                        <div >
                           <h3 className="title font-bold text-1xl my-4 location-title">{def.opis}</h3>
-                          <p className="description text-gray-400 location-description">
-                            <FontAwesomeIcon icon="coffee" /> {def.delovni_cas}
+                          <p className="description text-gray-400 location-description">Dostopnost: {def.delovni_cas}
+                            {/*<FontAwesomeIcon icon="coffee" /> */}
                           </p>
+                        </div>  
                       </div>
                     ))
                     }

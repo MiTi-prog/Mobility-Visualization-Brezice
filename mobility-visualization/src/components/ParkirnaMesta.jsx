@@ -108,7 +108,7 @@ function ParkirnaMesta() {
         longitude: lo, 
         latitude: la, 
         center: cent, 
-        zoom: 17,
+        zoom: 18,
         transitionDuration: 1000,
         transitionInterpolator: new FlyToInterpolator()
       });
@@ -239,7 +239,7 @@ function ParkirnaMesta() {
                             <FontAwesomeIcon icon="coffee" />Parkirni prostori za invalide: {park.parkirni_prostori_za_invalide}
                           </p>
                           <p className="description text-gray-400 location-description">
-                            <FontAwesomeIcon icon="coffee" />Parkirni režim: {park.parkrini_rezim}
+                            {/*<FontAwesomeIcon icon="coffee" />*/}Parkirni režim: {park.parkrini_rezim}
                           </p>
                       </div>
                     ))

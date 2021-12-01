@@ -39,7 +39,7 @@ function IzposojevalniceKoles() {
         latitude: la, 
         center: cent, 
         zoom: 15,
-        transitionDuration: 1500,
+        transitionDuration: 1000,
         transitionInterpolator: new FlyToInterpolator()
       });
     };
@@ -50,7 +50,7 @@ function IzposojevalniceKoles() {
         latitude: la, 
         center: cent, 
         zoom: 13,
-        transitionDuration: 1500,
+        transitionDuration: 1000,
         transitionInterpolator: new FlyToInterpolator()
       });
     };
@@ -132,7 +132,7 @@ function IzposojevalniceKoles() {
                             <FontAwesomeIcon icon="coffee" />Št. koles: {bike.izposojevalnica_stKoles}
                           </p>
                           <p className="description text-gray-400 location-description">
-                            <FontAwesomeIcon icon="coffee" />GPS kolesarnice: {bike.gps_kolesarnice}
+                            {/*<FontAwesomeIcon icon="coffee" />*/}GPS kolesarnice: {bike.gps_kolesarnice}
                           </p>
                           
                       </div>
