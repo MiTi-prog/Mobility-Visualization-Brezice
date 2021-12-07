@@ -57,6 +57,8 @@ function Defibrilatorji() {
       });
     };
 
+
+
     /*const scrollToSection = () => {
       scroller.scrollTo('focused', {
         duration: 800,
@@ -171,6 +173,7 @@ function Defibrilatorji() {
                     ))
                     }
                   </div>
+                 
               </div>
           </div>
         </div>
