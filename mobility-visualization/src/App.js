@@ -5,6 +5,7 @@ import ElektricnePolnilnice from './components/ElektricnePolnilnice.jsx';
 import IzposojevalniceKoles from './components/IzposojevalniceKoles.jsx';
 import Defibrilatorji from './components/Defibrilatorji.jsx';
 import ParkirnaMesta from './components/ParkirnaMesta.jsx';
+import About from './components/About';
 import './app.css';
 
 
@@ -34,6 +35,9 @@ function App() {
             </Route>
             <Route path="/defibrilatorji">
               <Defibrilatorji />
+            </Route>
+            <Route path="/o-projektu">
+              <About />
             </Route>
           </Switch>
         </Router>

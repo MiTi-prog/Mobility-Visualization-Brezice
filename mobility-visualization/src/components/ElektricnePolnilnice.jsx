@@ -1,14 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import polnilnice from '../data/elektricne_polnilnice.json';
 import Header from './Header';
-import ReactMapGL, { Marker, Popup, NavigationControl, FullscreenControl } from 'react-map-gl';
+import ReactMapGL, { 
+  Marker, 
+  Popup, 
+  NavigationControl, 
+  FullscreenControl,
+  FlyToInterpolator 
+} from 'react-map-gl';
  
 ReactMapGL.accessToken = 'pk.eyJ1IjoibWl0aTIxIiwiYSI6ImNrdzNoamxwdTFka2syb3JvdWRhM3EwNW8ifQ.OV5IlhtvWXgW2SwJbi_xYw';
 
 function ElektricnePolnilnice() {
     const [long, SetLong] = useState(15.5965);
     const [lat, SetLat] = useState(45.9088);
-    
+    //const [center, setCenter] = useState([long, lat]);
+
     const [viewport, setViewport] = React.useState({
         longitude: long,
         latitude: lat,
@@ -16,15 +23,38 @@ function ElektricnePolnilnice() {
         zoom: 11
     });
     
-    const navControlStyle= {
+    const navControlStyle = {
         right: 50,
         top: 200
-      };
+    };
 
-    
     const fullscreenControlStyle= {
-        right: 50,
-        top: 150
+      right: 50,
+      top: 150
+    };
+
+    const zoomToMarker = (lo,la,cent) => {
+      setViewport({
+        ...viewport, 
+        longitude: lo, 
+        latitude: la, 
+        center: cent, 
+        zoom: 15,
+        transitionDuration: 1000,
+        transitionInterpolator: new FlyToInterpolator()
+      });
+    };
+
+    const zoomOfMarker = (lo,la,cent) => {
+      setViewport({
+        ...viewport, 
+        longitude: lo, 
+        latitude: la, 
+        center: cent, 
+        zoom: 11,
+        transitionDuration: 1000,
+        transitionInterpolator: new FlyToInterpolator()
+      });
     };
 
     const [selectedCharger, setselectedCharger] = useState(null);
@@ -60,8 +90,14 @@ function ElektricnePolnilnice() {
                         <button className="marker-btn" onClick={(e) => {
                           e.preventDefault();
                           setselectedCharger(charger);
+                          
+                          zoomToMarker(
+                            charger.longitude,
+                            charger.latitude,
+                            [charger.longitude, charger.latitude]);
                         }}>
-                          <img src="icons/charger.png" alt="Marker icon"/>
+
+                          <img className="marker-icon" src="icons/charger_blue.png" alt="Marker icon"/>
                         </button>
 
                     </Marker>
@@ -74,6 +110,10 @@ function ElektricnePolnilnice() {
                     longitude={selectedCharger.longitude}
                     onClose={() => {
                       setselectedCharger(null);
+                      zoomOfMarker(
+                        selectedCharger.longitude,
+                        selectedCharger.latitude,
+                        [selectedCharger.longitude, selectedCharger.latitude]);
                     }}  
                   >
                     <div>
@@ -83,8 +123,34 @@ function ElektricnePolnilnice() {
                   </Popup>
                 ) : null}
                 <NavigationControl style={navControlStyle} />
-                <FullscreenControl style={fullscreenControlStyle} />   
+                <FullscreenControl style={fullscreenControlStyle} />
             </ReactMapGL>
+            {/* Sidebar */}
+            <div className="w-full h-3/4 lg:-mt-96 lg:w-1/4 px-8 py-5 ml-auto rounded-md sidebar blur">
+                  <div className="flex flex-col text-white">
+                    {polnilnice.map((charg) => (
+                      <div className="defibrilator-info" key={charg.longitude}>
+                          <h3 className="title font-bold text-1xl my-4 location-title">{charg.opis}</h3>
+                          <p className="description text-gray-400 location-description">
+                            Naslov: {charg.naslov}
+                          </p>
+                          <p className="description text-gray-400 location-description">
+                            Št. vtičnic: {charg.vticnnicaSt}
+                          </p>
+                          <p className="description text-gray-400 location-description">
+                            Vrsta Vtičnike: {charg.vrstaVticnice}
+                          </p>
+                          <p className="description text-gray-400 location-description">
+                            Nazivna moč: {charg.nazivnaMoc}
+                          </p>
+                          <p className="description text-gray-400 location-description">
+                            {/*<FontAwesomeIcon icon="coffee" />*/}Cena: {charg.cena}
+                          </p>
+                      </div>
+                    ))
+                    }
+                  </div>
+            </div>
         </div>
         </div>
       );

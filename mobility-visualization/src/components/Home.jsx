@@ -3,7 +3,7 @@ import React from 'react'
 function Home() {
     return (
         <div>
-            mali pes jazbečar!
+            Brežice
         </div>
     )
 }
