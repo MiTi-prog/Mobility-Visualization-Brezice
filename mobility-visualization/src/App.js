@@ -15,6 +15,7 @@ import {
   Route,
   Redirect
 } from "react-router-dom";
+import MerilciHitrosti from './components/MerilciHitrosti';
 
 function App() {
   return (
@@ -35,6 +36,9 @@ function App() {
             </Route>
             <Route path="/defibrilatorji">
               <Defibrilatorji />
+            </Route>
+            <Route path="/merilci-hitrosti">
+              <MerilciHitrosti />
             </Route>
             <Route path="/o-projektu">
               <About />

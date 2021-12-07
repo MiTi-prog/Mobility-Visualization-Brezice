@@ -36,6 +36,10 @@ function Header() {
 							<Link to="/defibrilatorji">
 								<span className="text-gray-400 hover:border-gray-400 border-transparent border-2 px-3 py-2 rounded-md text-sm font-medium ">Defibrilatorji</span>
 							</Link>
+							
+							<Link to="/merilci-hitrosti">
+								<span className="text-gray-400 hover:border-gray-400 border-transparent border-2 px-3 py-2 rounded-md text-sm font-medium ">Merilci hitrosti</span>
+							</Link>
 
 							<Link to="/o-projektu">
 								<span className="text-gray-400 hover:border-gray-400 border-transparent border-2 px-3 py-2 rounded-md text-sm font-medium ">O projektu</span>
@@ -113,6 +117,9 @@ function Header() {
 							</Link>
 							<Link to="/defibrilatorji">
 								<span className="text-gray-400 hover:bg-blue-900 block px-3 py-2 rounded-md text-base font-medium">Defibrilatorji</span>
+							</Link>
+							<Link to="/merilci-hitrosti">
+								<span className="text-gray-400 hover:bg-blue-900 block px-3 py-2 rounded-md text-base font-medium">Merilci hitrosti</span>
 							</Link>
 						</div>
 					</div>
