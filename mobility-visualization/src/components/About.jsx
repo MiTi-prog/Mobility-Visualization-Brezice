@@ -35,12 +35,12 @@ function About() {;
                             <h2 className="text-white text-xl">Avtorja projekta: Timotej Tim Rus in Mitja Šepec</h2>
                             <h4 className="text-white text-lg mt-5">Namen projekta:</h4>
                             <p className="text-gray-400 text-md text-justify">
-                                Ideja za projekt je nastala pri predmetu multimedijske tehnologije na Fakulteti za računalništvo in informatiko Ljubljana. Pri predmetu smo morali izdelati aplikacijo z
-                                vizualizacijo s pomočjo odprtokodnih podatki iz portala OPSI. Ker za najino domačo občino (občino Brežice), še ni bilo plaforme, ki bi prikazovala vse podatke
-                                o mobilnosti na enem mestu, sva se odločila za izdelavo spletne aplikacije z viualizacijo podatkov o mobilnosti. Vizualizirala sva naslednje primere: 
-                                parkirna mesta, izposojevalnice koles, električne polnilnice, merilce hitrosti ter dodala še podatke o defibrilatorjih. Nekaj podatkov sva dopolnila s pomočjo 
-                                različnih orodij (aplikacije PlugShare, google maps, merilce hitrosti pa sva morala ročno pridobiti iz zemljevida občine). Podatke sva predstavila na moderen in
-                                interaktiven način, prijazen uporabnikom. Sedaj bo lahko vsak, ki bo te podatke potreboval, našel vse na enem mestu in bo tako informiran o sami Občini Brežice in tem kar ponuja z vidika mobilnosti. <br/> 
+                                Ideja za projekt je nastala pri predmetu multimedijske tehnologije na Fakulteti za računalništvo in informatiko Ljubljana. Pri predmetu smo morali izdelati aplikacijo zvizualizacijo <br/> 
+                                s pomočjo odprtokodnih podatki iz portala OPSI. Ker za najino domačo občino (občino Brežice), še ni bilo plaforme, ki bi prikazovala vse podatko mobilnosti na enem mestu,<br/>
+                                sva se odločila za izdelavo spletne aplikacije z viualizacijo podatkov o mobilnosti. <br /> <br /> Vizualizirala sva naslednje primere: 
+                                parkirna mesta, izposojevalnice koles, električne polnilnice, merilce hitrosti ter dodala še podatke o defibrilatorjih. <br/>
+                                Nekaj podatkov sva dopolnila s pomočjo različnih orodij (aplikacije PlugShare, google Earth, merilce hitrosti pa sva morala ročno pridobiti iz zemljevida proizvajalcev in občine). <br/>
+                                Podatke sva predstavila na moderen ininteraktiven način, prijazen uporabnikom. Sedaj bo lahko vsak, ki bo te podatke potreboval, našel vse na enem mestu in bo tako  informiran <br/> o sami Občini Brežice in tem kar ponuja z vidika mobilnosti. <br/> 
                             </p>
                         </div>
                     </div>
