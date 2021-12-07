@@ -13,14 +13,14 @@ ReactMapGL.accessToken = 'pk.eyJ1IjoibWl0aTIxIiwiYSI6ImNrdzNoamxwdTFka2syb3JvdWR
 
 
 function MerilciHitrosti() {
-    const [long, SetLong] = useState(15.5965);
-    const [lat, SetLat] = useState(45.9088);
+    const [long, SetLong] = useState(15.5545);
+    const [lat, SetLat] = useState(45.90998);
 
     const [viewport, setViewport] = React.useState({
         longitude: long,
         latitude: lat,
         center: [long, lat],
-        zoom: 11
+        zoom: 11.5
     });
     
     const navControlStyle = {

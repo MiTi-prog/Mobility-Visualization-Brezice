@@ -12,8 +12,8 @@ import ReactMapGL, {
 ReactMapGL.accessToken = 'pk.eyJ1IjoibWl0aTIxIiwiYSI6ImNrdzNoamxwdTFka2syb3JvdWRhM3EwNW8ifQ.OV5IlhtvWXgW2SwJbi_xYw';
 
 function ElektricnePolnilnice() {
-    const [long, SetLong] = useState(15.5965);
-    const [lat, SetLat] = useState(45.9088);
+    const [long, SetLong] = useState(15.5865);
+    const [lat, SetLat] = useState(45.9299);
     //const [center, setCenter] = useState([long, lat]);
 
     const [viewport, setViewport] = React.useState({

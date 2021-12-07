@@ -80,8 +80,8 @@ function ParkirnaMesta() {
 
     */}
     
-    const [long, SetLong] = useState(15.595459);
-    const [lat, SetLat] = useState(45.9057747);
+    const [long, SetLong] = useState(15.594459);
+    const [lat, SetLat] = useState(45.9047747);
     //const [center, setCenter] = useState([long, lat]);
 
     const [viewport, setViewport] = React.useState({

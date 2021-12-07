@@ -12,14 +12,14 @@ import ReactMapGL, {
 ReactMapGL.accessToken = 'pk.eyJ1IjoibWl0aTIxIiwiYSI6ImNrdzNoamxwdTFka2syb3JvdWRhM3EwNW8ifQ.OV5IlhtvWXgW2SwJbi_xYw';
 
 function IzposojevalniceKoles() {
-    const [long, SetLong] = useState(15.5965);
-    const [lat, SetLat] = useState(45.9088);
+    const [long, SetLong] = useState(15.5895);
+    const [lat, SetLat] = useState(45.91122);
     
     const [viewport, setViewport] = React.useState({
         longitude: long,
         latitude: lat,
         center: [long, lat],
-        zoom: 13
+        zoom: 13.5
     });
     const navControlStyle= {
       right: 50,
