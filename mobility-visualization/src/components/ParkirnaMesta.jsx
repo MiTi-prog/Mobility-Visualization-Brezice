@@ -83,6 +83,7 @@ function ParkirnaMesta() {
     const [long, SetLong] = useState(15.594459);
     const [lat, SetLat] = useState(45.9047747);
     //const [center, setCenter] = useState([long, lat]);
+    const [searchTerm, setSearchTerm] = useState('');
 
     const [viewport, setViewport] = React.useState({
         longitude: long,
@@ -174,7 +175,17 @@ function ParkirnaMesta() {
                 mapboxApiAccessToken={'pk.eyJ1IjoibWl0aTIxIiwiYSI6ImNrdzNoamxwdTFka2syb3JvdWRhM3EwNW8ifQ.OV5IlhtvWXgW2SwJbi_xYw'}
                 >
                 
-                {parkirisca.map(
+                {parkirisca.filter((val) => {
+                    if (searchTerm == '') {
+                        return val;
+                    }
+                    else if (val.lokacija_parkirisca.toLowerCase().includes(searchTerm.toLowerCase())) {
+                        return val;
+                    }
+                    else if (val.opis_lokacije.toLowerCase().includes(searchTerm.toLowerCase())) {
+                        return val;
+                    }
+                }).map(
                   park => (
                     <Marker 
                       key={park.lokacija_parkirisca} 
@@ -221,9 +232,21 @@ function ParkirnaMesta() {
             </ReactMapGL>
             {/* Sidebar */}
             <div className="w-full h-3/4 lg:-mt-96 lg:w-1/4 px-8 py-5 ml-auto rounded-md sidebar blur">
-                  <div className="flex flex-col text-white">
-                    {parkirisca.map((park) => (
-                      <div className="defibrilator-info" key={park.LON}>
+                  <div className="flex flex-col">
+                      {/* SearchBar */}
+                      <input type="text" placeholder="Poišči električno polnilnico..." className="text-gray-400 search rounded-md border-0 focus:outline-none focus:ring-0 focus:border-blue-500 flex-grow p-2" onChange={event => {setSearchTerm(event.target.value)}}/>
+                      {parkirisca.filter((val) => {
+                        if (searchTerm == '') {
+                            return val;
+                        }
+                        else if (val.lokacija_parkirisca.toLowerCase().includes(searchTerm.toLowerCase())) {
+                            return val;
+                        }
+                        else if (val.opis_lokacije.toLowerCase().includes(searchTerm.toLowerCase())) {
+                            return val;
+                        }
+                    }).map((park) => (
+                      <div className="defibrilator-info  text-white" key={park.LON}>
                           <h3 className="title font-bold text-1xl my-4 location-title">{park.opis_lokacije}</h3>
                           <p className="description text-gray-400 location-description">
                             Naslov: {park.lokacija_parkirisca}

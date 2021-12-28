@@ -14,6 +14,7 @@ ReactMapGL.accessToken = 'pk.eyJ1IjoibWl0aTIxIiwiYSI6ImNrdzNoamxwdTFka2syb3JvdWR
 function IzposojevalniceKoles() {
     const [long, SetLong] = useState(15.5895);
     const [lat, SetLat] = useState(45.91122);
+    const [searchTerm, setSearchTerm] = useState('');
     
     const [viewport, setViewport] = React.useState({
         longitude: long,
@@ -76,7 +77,17 @@ function IzposojevalniceKoles() {
                 mapboxApiAccessToken={'pk.eyJ1IjoibWl0aTIxIiwiYSI6ImNrdzNoamxwdTFka2syb3JvdWRhM3EwNW8ifQ.OV5IlhtvWXgW2SwJbi_xYw'}
                 >
                 
-                {kolesa.map(
+                {kolesa.filter((val) => {
+                    if (searchTerm == '') {
+                        return val;
+                    }
+                    else if (val.lokacija.toLowerCase().includes(searchTerm.toLowerCase())) {
+                        return val;
+                    }
+                    else if (val.opis_lokacije.toLowerCase().includes(searchTerm.toLowerCase())) {
+                        return val;
+                    }
+                }).map(
                   kolo => (
                     <Marker 
                       key={kolo.opis_lokacije} 
@@ -120,9 +131,21 @@ function IzposojevalniceKoles() {
             </ReactMapGL>
             {/* Sidebar */}
             <div className="w-full h-3/4 lg:-mt-96 lg:w-1/4 px-8 py-5 ml-auto rounded-md sidebar blur">
-                  <div className="flex flex-col text-white">
-                    {kolesa.map((bike) => (
-                      <div className="defibrilator-info" key={bike.LON}>
+                  <div className="flex flex-col">
+                      {/* SearchBar */}
+                      <input type="text" placeholder="Poišči električno polnilnico..." className="text-gray-400 search rounded-md border-0 focus:outline-none focus:ring-0 focus:border-blue-500 flex-grow p-2" onChange={event => {setSearchTerm(event.target.value)}}/>
+                      {kolesa.filter((val) => {
+                          if (searchTerm == '') {
+                              return val;
+                          }
+                          else if (val.lokacija.toLowerCase().includes(searchTerm.toLowerCase())) {
+                              return val;
+                          }
+                          else if (val.opis_lokacije.toLowerCase().includes(searchTerm.toLowerCase())) {
+                              return val;
+                          }
+                      }).map((bike) => (
+                      <div className="defibrilator-info text-white" key={bike.LON}>
                           <h3 className="title font-bold text-1xl my-4 location-title">{bike.opis_lokacije}</h3>
                           <p className="description text-gray-400 location-description">
                            Naslov: {bike.lokacija}

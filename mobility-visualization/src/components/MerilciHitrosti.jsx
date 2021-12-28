@@ -15,6 +15,7 @@ ReactMapGL.accessToken = 'pk.eyJ1IjoibWl0aTIxIiwiYSI6ImNrdzNoamxwdTFka2syb3JvdWR
 function MerilciHitrosti() {
     const [long, SetLong] = useState(15.5545);
     const [lat, SetLat] = useState(45.90998);
+    const [searchTerm, setSearchTerm] = useState('');
 
     const [viewport, setViewport] = React.useState({
         longitude: long,
@@ -80,7 +81,14 @@ function MerilciHitrosti() {
                 mapboxApiAccessToken={'pk.eyJ1IjoibWl0aTIxIiwiYSI6ImNrdzNoamxwdTFka2syb3JvdWRhM3EwNW8ifQ.OV5IlhtvWXgW2SwJbi_xYw'}
                 >
                 
-                {merilci.map(
+                {merilci.filter((val) => {
+                    if (searchTerm == '') {
+                        return val;
+                    }
+                    else if (val.opis.toLowerCase().includes(searchTerm.toLowerCase())) {
+                        return val;
+                    }
+                }).map(
                   speed => (
                     <Marker 
                       key={speed.opis} 
@@ -127,9 +135,18 @@ function MerilciHitrosti() {
             </ReactMapGL>
             {/* Sidebar */}
             <div className="w-full h-3/4 lg:-mt-96 lg:w-1/4 px-8 py-5 ml-auto rounded-md sidebar blur">
-                  <div className="flex flex-col text-white">
-                    {merilci.map((sped) => (
-                      <div className="defibrilator-info" key={sped.longitude}>
+                  <div className="flex flex-col">
+                      {/* SearchBar */}
+                      <input type="text" placeholder="Poišči električno polnilnico..." className="text-gray-400 search rounded-md border-0 focus:outline-none focus:ring-0 focus:border-blue-500 flex-grow p-2" onChange={event => {setSearchTerm(event.target.value)}}/>
+                      {merilci.filter((val) => {
+                          if (searchTerm == '') {
+                              return val;
+                          }
+                          else if (val.opis.toLowerCase().includes(searchTerm.toLowerCase())) {
+                              return val;
+                          }
+                      }).map((sped) => (
+                      <div className="defibrilator-info text-white" key={sped.longitude}>
                           <h3 className="title font-bold text-1xl my-4 location-title">{sped.opis}</h3>
                           <p className="description text-gray-400 location-description">
                             Proizvajalec: {sped.proizvajalec}

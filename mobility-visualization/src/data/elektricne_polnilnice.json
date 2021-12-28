@@ -24,21 +24,10 @@
       "longitude": 15.6139733,
       "latitude": 45.9532299,
       "cena": "free",
-      "vticnnicaSt": 1,
+      "vticnnicaSt": 2,
       "vrstaVticnice": "Type 2",
-      "nazivnaMoc" : "22kw",
+      "nazivnaMoc" : "11kw in 22kw",
       "naslov" : "Mali vrh 9, Dečno selo, Slovenia"
-    },
-    {
-      "opis": "Gostinstvo Strniša d.o.o.",
-      "longitude": 15.6895054,
-      "latitude": 45.8586898,
-      "cena": "free",
-      "vticnnicaSt": 1,
-      "vrstaVticnice": "Type 2",
-      "nazivnaMoc" : "11kw",
-      "naslov" : "Mali vrh 9, Dečno selo, Slovenia"
-      
     },
     {
       "opis": "Gostilna Pension Les",

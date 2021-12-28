@@ -12,10 +12,14 @@ import ReactMapGL, {
  
 ReactMapGL.accessToken = 'pk.eyJ1IjoibWl0aTIxIiwiYSI6ImNrdzNoamxwdTFka2syb3JvdWRhM3EwNW8ifQ.OV5IlhtvWXgW2SwJbi_xYw';
 
+
+const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)   
+
 function Defibrilatorji() {
     const [long, SetLong] = useState(15.5765);
     const [lat, SetLat] = useState(45.92998);
-    
+    const [searchTerm, setSearchTerm] = useState('');
+
     const [viewport, setViewport] = React.useState({
         longitude: long,
         latitude: lat,
@@ -65,23 +69,28 @@ function Defibrilatorji() {
         delay: 0,
         smooth: "easeInOutQuart",
       });
-    };
-    const myRef = useRef(null);
-    const executeScroll = () => myRef.scrollIntoView();*/
+    };*/
+
+    // const myRef = useRef(null);
+    // const executeScroll = () => scrollToRef(myRef);
 
 
     const ref = useRef(null);
     const addClass = () => {
       const span = ref.current;
       span.className = 'focused';
-      console.log('marker enabled')
+      console.log('marker enabled');
     };
     
     const removeClass = () => {
       const span = ref.current;
       span.className = '';
-      console.log('marker disabled')
+      console.log('marker disabled');
     };
+
+    // const scroll = () => {
+    //   document.getElementsByClassName('focused').scroll(0,0);
+    // }
     
     const [selectedDefibrilator, setselectedDefibrilator] = useState(null);
     
@@ -106,9 +115,16 @@ function Defibrilatorji() {
                   mapboxApiAccessToken={'pk.eyJ1IjoibWl0aTIxIiwiYSI6ImNrdzNoamxwdTFka2syb3JvdWRhM3EwNW8ifQ.OV5IlhtvWXgW2SwJbi_xYw'}
                   >
                   
-                  {defibrilatorji.map(
+                  {defibrilatorji.filter((val) => {
+                      if (searchTerm == '') {
+                          return val;
+                      }
+                      else if (val.opis.toLowerCase().includes(searchTerm.toLowerCase())) {
+                          return val;
+                      }
+                  }).map(
                     defibrilator => (
-                      <Marker 
+                      <Marker
                         key={defibrilator.opis} 
                         longitude={defibrilator.longitude} 
                         latitude={defibrilator.latitude} >
@@ -117,7 +133,9 @@ function Defibrilatorji() {
                             e.preventDefault();
                             setselectedDefibrilator(defibrilator);
                             addClass();
-                            //executeScroll();
+                            //scrollToSection();
+                            // executeScroll();
+                            //scroll();
                             
                             zoomToMarker(
                               defibrilator.longitude,
@@ -144,7 +162,7 @@ function Defibrilatorji() {
                           [selectedDefibrilator.longitude, selectedDefibrilator.latitude]);
                       }}  
                     >
-                      
+
                       <div>
                         <span>
                           <h2><strong>{selectedDefibrilator.opis}</strong></h2>
@@ -157,13 +175,24 @@ function Defibrilatorji() {
                 <FullscreenControl style={fullscreenControlStyle} />
               </ReactMapGL>
 
+
+
               {/* Sidebar */}
               <div className="w-full h-3/4 lg:-mt-96 lg:w-1/4 px-8 py-5 ml-auto rounded-md sidebar blur">
-                  <div className="flex flex-col text-white">
-                    {defibrilatorji.map((def) => (
+                  <div className="flex flex-col ">
+                      {/* SearchBar */}
+                      <input type="text" placeholder="Poišči električno polnilnico..." className="text-gray-400 search rounded-md border-0 focus:outline-none focus:ring-0 focus:border-blue-500 flex-grow p-2" onChange={event => {setSearchTerm(event.target.value)}}/>
+                      {defibrilatorji.filter((val) => {
+                          if (searchTerm == '') {
+                          return val;
+                      }
+                          else if (val.opis.toLowerCase().includes(searchTerm.toLowerCase())) {
+                          return val;
+                      }
+                      }).map((def) => (
                       <div ref={ref} className="" key={def.longitude}>
-                        {/*ref={ (ref) => this.myRef=ref spodaj v div*/}
-                        <div >
+                        {/*ref={myRef} spodaj v div  ref={ (ref) => myRef=ref}*/}
+                        <div className="defibrilator-info text-white" >
                           <h3 className="title font-bold text-1xl my-4 location-title">{def.opis}</h3>
                           <p className="description text-gray-400 location-description">Dostopnost: {def.delovni_cas}
                             {/*<FontAwesomeIcon icon="coffee" /> */}
