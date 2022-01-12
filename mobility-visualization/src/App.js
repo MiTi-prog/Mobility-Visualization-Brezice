@@ -16,6 +16,7 @@ import {
   Redirect
 } from "react-router-dom";
 import MerilciHitrosti from './components/MerilciHitrosti';
+import Parkirna from './components/Parkirna';
 
 function App() {
   return (
@@ -42,6 +43,9 @@ function App() {
             </Route>
             <Route path="/o-projektu">
               <About />
+            </Route>
+            <Route path="/test">
+              <Parkirna />
             </Route>
           </Switch>
         </Router>
