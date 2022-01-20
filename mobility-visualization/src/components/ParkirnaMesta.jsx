@@ -160,7 +160,7 @@ function ParkirnaMesta() {
                   <div className="flex flex-col">
                       {/* SearchBar */}
                       {isMarker && 
-                        <input type="text" placeholder="Poišči električno polnilnico..." className="text-gray-400 search rounded-md border-0 focus:outline-none focus:ring-0 focus:border-blue-500 flex-grow p-2" onChange={event => {setSearchTerm(event.target.value)}}/>
+                        <input type="text" placeholder="Poišči parkirno mesto..." className="text-gray-400 search rounded-md border-0 focus:outline-none focus:ring-0 focus:border-blue-500 flex-grow p-2" onChange={event => {setSearchTerm(event.target.value)}}/>
                       }               
                       <div className='showParkings'>
                         <input 

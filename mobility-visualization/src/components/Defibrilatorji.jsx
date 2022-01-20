@@ -181,7 +181,7 @@ function Defibrilatorji() {
               <div className="w-full h-3/4 lg:-mt-96 lg:w-1/4 px-8 py-5 ml-auto rounded-md sidebar blur">
                   <div className="flex flex-col ">
                       {/* SearchBar */}
-                      <input type="text" placeholder="Poišči električno polnilnico..." className="text-gray-400 search rounded-md border-0 focus:outline-none focus:ring-0 focus:border-blue-500 flex-grow p-2" onChange={event => {setSearchTerm(event.target.value)}}/>
+                      <input type="text" placeholder="Poišči defibrilator..." className="text-gray-400 search rounded-md border-0 focus:outline-none focus:ring-0 focus:border-blue-500 flex-grow p-2" onChange={event => {setSearchTerm(event.target.value)}}/>
                       {defibrilatorji.filter((val) => {
                           if (searchTerm == '') {
                           return val;

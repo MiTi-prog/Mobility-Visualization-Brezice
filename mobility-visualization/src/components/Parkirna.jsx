@@ -42,7 +42,7 @@ function Parkirna() {
           width: "100vw"
         }}
         zoom={[15.5]}
-        center={[15.595651854337284, 45.90493389262271]}
+        center={[15.593761, 45.906359]}
       >
         <DrawControl ref={setupGeometries} />
       </Map>
